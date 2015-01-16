@@ -2,14 +2,14 @@
 layout: default
 ---
 
-# About the author
+# Informazioni sull'autore
 
-My name is [Hugo Giraudel](http://hugogiraudel.com), I am a front-end developer from France about to move to Berlin, Germany. I have been writing Sass for over two years now and am the author of Sass-related projects such as [SassDoc](http://sassdoc.com) and [Sass-Compatibility](http://sass-compatibility.github.io).
+Il mio nome è [Hugo Giraudel](http://hugogiraudel.com), sono uno sviluppatore front-end Francese che sta per trasferirsi a Berlino, in Germania. Scrivo codice Sass da oltre due anni e sono l'autore di progetti basati su Sass quali [SassDoc](http://sassdoc.com) e [Sass-Compatibility](http://sass-compatibility.github.io).
 
-I have also written a couple of Sass libraries, mostly for the heck of it: [SassyJSON](https://github.com/HugoGiraudel/SassyJSON), [SassyLists](http://sassylists.com), [SassySort](https://github.com/HugoGiraudel/SassySort), [SassyCast](https://github.com/HugoGiraudel/SassyCast), [SassyMatrix](https://github.com/HugoGiraudel/SassyMatrix), [SassyBitwise](https://github.com/HugoGiraudel/SassyBitwise), [SassyIteratorsGenerators](https://github.com/HugoGiraudel/SassyIteratorsGenerators), [SassyLogger](https://github.com/HugoGiraudel/SassyLogger), [SassyStrings](https://github.com/HugoGiraudel/SassyStrings) and [SassyGradients](https://github.com/HugoGiraudel/SassyGradients).
+Ho creato anche alcune librerie Sass, principalmente per il piacere di farlo: [SassyJSON](https://github.com/HugoGiraudel/SassyJSON), [SassyLists](http://sassylists.com), [SassySort](https://github.com/HugoGiraudel/SassySort), [SassyCast](https://github.com/HugoGiraudel/SassyCast), [SassyMatrix](https://github.com/HugoGiraudel/SassyMatrix), [SassyBitwise](https://github.com/HugoGiraudel/SassyBitwise), [SassyIteratorsGenerators](https://github.com/HugoGiraudel/SassyIteratorsGenerators), [SassyLogger](https://github.com/HugoGiraudel/SassyLogger), [SassyStrings](https://github.com/HugoGiraudel/SassyStrings) e [SassyGradients](https://github.com/HugoGiraudel/SassyGradients).
 
 <div class="button-wrapper">
-  <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" class="button">Catch me on Twitter</a>
+  <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" class="button">Mi trovi su Twitter</a>
 </div>
 
 
@@ -22,18 +22,18 @@ I have also written a couple of Sass libraries, mostly for the heck of it: [Sass
 
 
 
-# Contributing
+# Contribuire
 
-Sass Guidelines is a free project that I maintain in my spare time. Needless to say, it is quite a large amount of work to keep everything up-to-date, documented and relevant. Obviously, knowing that you liked this styleguide is already much appreciated!
+Sass Guidelines è un progetto gratuito che mantengo nel mio tempo libero. Inutile dire che serve molto lavoro per mantenere tutto aggiornato, documentato e rilevante. Ovviamente, sapere che hai apprezzato questa styleguide significa già molto!
 
-Now if you feel like contributing, please know that tweeting about it, spreading the word, or fixing a tiny typo by opening an issue or a pull-request on the [GitHub repository](https://github.com/HugoGiraudel/sass-guidelines) would be great!
+Se desideri anche contribuire, sappi che twittarlo sul tuo profilo, spargere il verbo, o sistemare un piccolo errore di battitura aprendo un issue o una pull-request sul [repository GitHub](https://github.com/HugoGiraudel/sass-guidelines) sarebbe grandioso!
 
-Last but not least before we start: if you enjoyed this document, or if it is useful for you or your team, please consider supporting it!
+Infine prima di cominciare: se ti è piaciuto questo documento, o se è utile per te o il tuo team, considera la possibilità di supportarlo!
 
 <div class="button-wrapper">
-  <a href="https://gum.co/sass-guildelines" target="_blank" class="button">Support Sass Guidelines</a>
+  <a href="https://gum.co/sass-guildelines" target="_blank" class="button">Supporta Sass Guidelines</a>
   {% capture tweet %}{{ site.title }}, {{ site.description }} by @{{ site.twitter_username }} –{% endcapture %}
-  <a href="https://twitter.com/share?text={{ tweet | cgi_escape }}&url={{ site.url }}" target="_blank" class="button">Spread the word</a>
+  <a href="https://twitter.com/share?text={{ tweet | cgi_escape }}&url={{ site.url }}" target="_blank" class="button">Spargi il verbo</a>
 </div>
 
 
@@ -46,14 +46,14 @@ Last but not least before we start: if you enjoyed this document, or if it is us
 
 
 
-# Table of Contents
+# Indice dei Contenuti
 
-* [About The Author](#about-the-author)
-* [Contributing](#contributing)
-* [About Sass](#about-sass)
-  * [Ruby Sass Or LibSass](#ruby-sass-or-libsass)
-  * [Sass Or SCSS](#sass-or-scss)
-  * [Other Preprocessors](#other-preprocessors)
+* [Informazioni sull'autore](#about-the-author)
+* [Contribuire](#contributing)
+* [Cosa è Sass](#about-sass)
+  * [Ruby Sass o LibSass](#ruby-sass-or-libsass)
+  * [Sass o SCSS](#sass-or-scss)
+  * [Altri Preprocessori](#other-preprocessors)
 * [Introduction](#introduction)
   * [Why A Styleguide](#why-a-styleguide)
   * [Disclaimer](#disclaimer)
@@ -133,21 +133,21 @@ Last but not least before we start: if you enjoyed this document, or if it is us
 
 
 
-# About Sass
+# Cosa è Sass
 
-This is how [Sass](http://sass-lang.com) describes itself in its [documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html):
+Questo è il modo in cui [Sass](http://sass-lang.com) viene descritto nella sua [documentazione](http://sass-lang.com/documentation/file.SASS_REFERENCE.html):
 
-> Sass is an extension of CSS that adds power and elegance to the basic language.
+> Sass è una estensione del CSS che aggiunge potenza ed eleganza al linguaggio di base.
 
-Sass's ultimate objective is to fix CSS's flaws. CSS, as we all know, is not the best language in the world <sup>[citation needed]</sup>. While very simple to learn, it can quickly get quite messy, especially on large projects.
+L'obbiettivo finale di Sass è di correggere i difetti del linguaggio CSS. Il CSS, come tutti sappiamo, non è il linguaggio migliore del mondo <sup>[citation needed]</sup>. Nonostante sia semplice da apprendere, può diventare disordinato molto velocemente, specialmente nei grandi progetti.
 
-This is where Sass comes in, as a meta-language, to improve CSS's syntax in order to provide extra features and handy tools. Meanwhile, Sass wants to be conservative regarding the CSS language.
+Ed è qui che entra in scena Sass, in qualità di meta-linguaggio, per migliorare la sintassi del CSS in modo da mettere a disposizione caratteristiche aggiuntive e strumenti utili. Contemporaneamente, Sass vuole essere conservativo rispetto al linguaggio CSS.
 
-The point is not to turn CSS into a fully-featured programming language; Sass only wants to help where CSS fails. Because of this, getting started with Sass is no harder than learning CSS: it simply adds a couple of extra features on top of it.
+Il punto non è trasformare il CSS in un vero e proprio linguaggio di programmazione; Sass interviene solo dove il CSS fallisce. Per questo motivo, prendere la mano con Sass non è più difficile che apprendere il CSS: aggiunge semplicemente alcune funzionalità in più sopra di esso.
 
-That being said, there are many ways to use these features. Some good, some bad, some unusual. These guidelines are meant to give you a consistent and documented approach to writing Sass code.
+Detto questo, ci sono molti modi per usare queste nuove funzionalità. Alcuni buoni, alcuni sbagliati, alcuni insoliti. Queste linee guida sono pensate per darti un approccio consistente e documentato alla scrittura del codice Sass.
 
-### Further reading
+### Letture aggiuntive
 
 * [Sass](http://sass-lang.com)
 * [Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
@@ -157,7 +157,7 @@ That being said, there are many ways to use these features. Some good, some bad,
 
 
 
-## Ruby Sass or LibSass
+## Ruby Sass o LibSass
 
 [Sass's first commit](https://github.com/hcatlin/sass/commit/fa5048ba405619273e474a50400c7243fbff54fe) goes back as far as late 2006, over 8 years ago. Needless to say it has come a long way since then. Initially developed in Ruby, varied ports popped up here and there. The most successful one, [LibSass](https://github.com/sass/libsass) (written in C) is now close to being fully compatible with the original Ruby version.
 
@@ -203,7 +203,7 @@ I, myself, prefer SCSS over Sass because it is closer to CSS and friendlier to m
 
 
 
-## Other preprocessors
+## Altri Preprocessori
 
 Sass is a preprocessor among other things. Its most serious competitor has to be [LESS](http://lesscss.org/), a NodeJS based preprocessor that has gotten quite popular thanks to the famous CSS framework [Bootstrap](http://getbootstrap.com/) using it. There is also [Stylus](http://learnboost.github.io/stylus/) - which is kind of the nerdy, unrestricted version of LESS - where you can do pretty much whatever you want since it almost turns CSS into a programming language.
 
