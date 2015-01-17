@@ -139,7 +139,7 @@ Questo è il modo in cui [Sass](http://sass-lang.com) viene descritto nella sua 
 
 > Sass è una estensione del CSS che aggiunge potenza ed eleganza al linguaggio di base.
 
-L'obbiettivo finale di Sass è di correggere i difetti del linguaggio CSS. Il CSS, come tutti sappiamo, non è il linguaggio migliore del mondo <sup>[citation needed]</sup>. Nonostante sia semplice da apprendere, può diventare disordinato molto velocemente, specialmente nei grandi progetti.
+L'obbiettivo finale di Sass è di correggere i difetti del linguaggio CSS. Il CSS, come tutti sappiamo, non è il linguaggio migliore del mondo <sup>[citazione necessaria]</sup>. Nonostante sia semplice da apprendere, può diventare disordinato molto velocemente, specialmente nei grandi progetti.
 
 Ed è qui che entra in scena Sass, in qualità di meta-linguaggio, per migliorare la sintassi del CSS in modo da mettere a disposizione caratteristiche aggiuntive e strumenti utili. Contemporaneamente, Sass vuole essere conservativo rispetto al linguaggio CSS.
 
@@ -159,21 +159,21 @@ Detto questo, ci sono molti modi per usare queste nuove funzionalità. Alcuni bu
 
 ## Ruby Sass o LibSass
 
-[Sass's first commit](https://github.com/hcatlin/sass/commit/fa5048ba405619273e474a50400c7243fbff54fe) goes back as far as late 2006, over 8 years ago. Needless to say it has come a long way since then. Initially developed in Ruby, varied ports popped up here and there. The most successful one, [LibSass](https://github.com/sass/libsass) (written in C) is now close to being fully compatible with the original Ruby version.
+[Il primo committ su Sass](https://github.com/hcatlin/sass/commit/fa5048ba405619273e474a50400c7243fbff54fe) risale alla fine del 2006, più di 8 anni fa. Inutile dire che ha fatto molta strada da allora. Inizialmente sviluppato in Ruby, numerosi porting sono apparsi un po ovunque. Quello di maggior successo, [LibSass](https://github.com/sass/libsass) (scritto in C) è ora molto vicino ad essere del tutto compatibile con la versione Ruby.
 
-In 2014, [Ruby Sass and LibSass teams decided to wait for both versions to sync up before moving forward](https://github.com/sass/libsass/wiki/The-LibSass-Compatibility-Plan). Since then, LibSass has been actively releasing versions to have feature-parity with its older brother. The last remaining inconsistencies are gathered and listed by myself under the [Sass-Compatibility](http://sass-compatibility.github.io) project. If you are aware of an incompatibility between the two versions that is not listed, please be kind enough to open an issue.
+Nel 2014, [i teams di Ruby Sass e LibSass hanno deciso di attendere l'allineamento delle due versioni prima di svuluppare nuove funzionalità](https://github.com/sass/libsass/wiki/The-LibSass-Compatibility-Plan). Da allora, LibSass rilascia attivamente delle versioni funzionalmente paritative a quelle del suo fratello maggiore. Le ultime inconsistenze rimaste sono raccolte e listate da me nel progetto [Sass-Compatibility](http://sass-compatibility.github.io). Se sei a conoscenza di una incompatibilità non listata nel progetto, puoi aprire un issue per aggiungerla.
 
-Coming back to choosing your compiler. Actually, it all depends on your project. If it is a Ruby on Rails project, you better use Ruby Sass, which is perfectly suited for such a case. Also, be aware that Ruby Sass will always be the reference implementation and will always lead LibSass in features.
+Torniamo alla scelta del compilatore. In realtà, tutto dipende dal tuo progetto. Se è un progetto Ruby on Rails, faresti meglio ad usare Ruby Sass, che è perfettamente idoneo per un caso come questo. Inoltre, sappi che Ruby Sass sarà sempre l'implementazione di riferimento che guiderà le funzionalità di LibSass.
 
-On non-Ruby projects that need a workflow integration, LibSass is probably a better idea since it is mostly dedicated to being wrapped. So if you want to use, let's say NodeJS, [node-sass](https://github.com/sass/node-sass) is all chosen.
+Per i progetti non-Ruby che necessitano di una integrazione di workflow, LibSass è probabilmente la scelta migliore dato che è principalmente orientato ad essere incluso. Quindi se vuoi utilizzare per esempio NodeJS, [node-sass](https://github.com/sass/node-sass) è lo strumento giusto.
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [LibSass](https://github.com/sass/libsass)
 * [Sass-Compatibility](http://sass-compatibility.github.io)
-* [Switching from Ruby Sass to LibSass](http://www.sitepoint.com/switching-ruby-sass-libsass/)
+* [Passare da Ruby Sass a LibSass](http://www.sitepoint.com/switching-ruby-sass-libsass/)
 
 
 
@@ -194,7 +194,7 @@ I, myself, prefer SCSS over Sass because it is closer to CSS and friendlier to m
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [What's the difference between Sass and SCSS](http://www.sitepoint.com/whats-difference-sass-scss/)
 
@@ -223,7 +223,7 @@ While providing tomorrow's syntax today is something of a noble idea, I have to 
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [LESS](http://lesscss.org/)
 * [Stylus](http://learnboost.github.io/stylus/)
@@ -297,7 +297,7 @@ Also, and let me quote [Harry Roberts](https://csswizardry.com) once again, **pr
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [KISS principle](http://en.wikipedia.org/wiki/KISS_principle)
 * [DRY principle](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
@@ -672,7 +672,7 @@ Needless to say **magic numbers are a plague and should be avoided at all costs*
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Use Lengths, Not Strings](http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/)
 * [Correctly Adding Unit to Number](http://css-tricks.com/snippets/sass/correctly-adding-unit-number/)
@@ -699,7 +699,7 @@ In order to make colors as simple as they can be, my advice would be to respect 
 1. [RGB notation](http://en.wikipedia.org/wiki/RGB_color_model);
 1. Hexadecimal notation. Preferably lowercase and shortened when possible.
 
-For starters, keywords often speak for themselves. The HSL representation is not only the easiest one for the human brain to comprehend<sup>[citation needed]</sup>, it also makes it easy for stylesheet authors to tweak the color by adjusting the hue, saturation and lightness individually. RGB still has the benefit of showing right away if the color is more of a blue, a green or a red but it does not make it easy to build a color from the three parts. Lastly, hexadecimal is close to indecipherable for the human mind.
+For starters, keywords often speak for themselves. The HSL representation is not only the easiest one for the human brain to comprehend<sup>[citazione necessaria]</sup>, it also makes it easy for stylesheet authors to tweak the color by adjusting the hue, saturation and lightness individually. RGB still has the benefit of showing right away if the color is more of a blue, a green or a red but it does not make it easy to build a color from the three parts. Lastly, hexadecimal is close to indecipherable for the human mind.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -867,7 +867,7 @@ If you don't want to write the `mix` function every time, you can create two eas
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [A Visual Guide to Sass & Compass Color Functions](http://jackiebalzer.com/color)
 * [How to Programmatically Go From One Color to Another](http://thesassway.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass)
@@ -965,7 +965,7 @@ $shadows: $shadows, $shadow
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [SassyLists](http://sassylists.com)
 
@@ -1108,7 +1108,7 @@ If you are interested in knowing the depth of the map, add the following functio
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Using Sass Maps](http://www.sitepoint.com/using-sass-maps/)
 * [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/)
@@ -1232,7 +1232,7 @@ Illustration:
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Anatomy of a Ruleset](http://cssguidelin.es/#anatomy-of-a-ruleset)
 
@@ -1371,7 +1371,7 @@ Because of this, I will not impose a choice in this styleguide. Pick the one you
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [CSS Comb](https://github.com/csscomb/csscomb.js)
 * [Concentric CSS](https://github.com/brandon-rhodes/Concentric-CSS)
@@ -1618,7 +1618,7 @@ As with everything, the specifics are somewhat irrelevant, consistency is key. I
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Beware of Selector Nesting](http://www.sitepoint.com/beware-selector-nesting-sass/)
 * [The Inception Rule](http://thesassway.com/beginner/the-inception-rule)
@@ -1677,7 +1677,7 @@ $vertical-rhythm-baseline: 1.5rem
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [CSS Guidelines' Naming Conventions](http://cssguidelin.es/#naming-conventions)
 
@@ -1754,7 +1754,7 @@ $su-configuration: ( ... )
   <p>Note that automatic namespacing is definitely a design goal for the upcoming <code>@import</code> revamp from Sass 4.0. As that comes closer to fruition, it will become less and less useful to do manual namespacing; eventually, manually-namespaced libraries may actually be harder to use.</p>
 </div>
 
-### Further reading
+### Letture aggiuntive
 
 * [Please Respect the Global CSS Namespace](http://blog.kaelig.fr/post/44554267597/please-respect-the-global-css-namespace)
 
@@ -1847,7 +1847,7 @@ $imported-modules: append($imported-modules, $module) !global
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [CSS Guidelines' Commenting section](http://cssguidelin.es/#commenting)
 
@@ -1994,7 +1994,7 @@ Here is an example of a mixin extensively documented with SassDoc:
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [SassDoc](http://sassdoc.com)
 * [SassDoc: a Documentation Tool for Sass](http://www.sitepoint.com/sassdoc-documentation-tool-sass/)
@@ -2028,7 +2028,7 @@ I, myself, use an approach that happens to be quite similar to [SMACSS](https://
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Architecture for a Sass project](http://www.sitepoint.com/architecture-sass-project/)
 * [A Look at Different Sass Architectures](http://www.sitepoint.com/look-different-sass-architectures/)
@@ -2044,7 +2044,7 @@ I, myself, use an approach that happens to be quite similar to [SMACSS](https://
 
 ## Components
 
-There is a major difference between making it *work*, and making it *good*. Again, CSS is quite a messy language <sup>[citation needed]</sup>. The less CSS we have, the merrier. We don't want to deal with megabytes of CSS code. To keep stylesheets short and efficient&mdash;and this will not be any surprise to you&mdash;it is usually a good idea to think of an interface as a collection of components.
+There is a major difference between making it *work*, and making it *good*. Again, CSS is quite a messy language <sup>[citazione necessaria]</sup>. The less CSS we have, the merrier. We don't want to deal with megabytes of CSS code. To keep stylesheets short and efficient&mdash;and this will not be any surprise to you&mdash;it is usually a good idea to think of an interface as a collection of components.
 
 Components can be anything, as long as they:
 
@@ -2462,7 +2462,7 @@ There is an interesting concept that has been made popular by [Harry Roberts](ht
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [shame.css](http://csswizardry.com/2013/04/shame-css/)
 * [shame.css - full .net interview](http://csswizardry.com/2013/04/shame-css-full-net-interview/)
@@ -2543,7 +2543,7 @@ $breakpoints: ("seed": (min-width: 800px), "sprout": (min-width: 1000px), "plant
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Naming Media Queries](http://css-tricks.com/naming-media-queries/)
 
@@ -2977,7 +2977,7 @@ To sum up, I would **advise against using the `@extend` directive**, unless unde
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [What Nobody Told you About Sass Extend](http://www.sitepoint.com/sass-extend-nobody-told-you/)
 * [Why You Should Avoid Extend](http://www.sitepoint.com/avoid-sass-extend/)
@@ -3070,7 +3070,7 @@ Another valid example would be a mixin to size an element, defining both `width`
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Sass Mixins to Kickstart your Project](http://www.sitepoint.com/sass-mixins-kickstart-project/)
 * [A Sass Mixin for CSS Triangles](http://www.sitepoint.com/sass-mixin-css-triangles/)
@@ -3159,7 +3159,7 @@ $params: ( 'c': 'kittens', 'a': true, 'b': 42, )
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Sass Multiple Arguments, Lists or Arglist](http://www.sitepoint.com/sass-multiple-arguments-lists-or-arglist/)
 
@@ -3257,7 +3257,7 @@ Please keep in mind this is a poor solution. For instance, it cannot deal with c
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Autoprefixer](https://github.com/postcss/autoprefixer)
 * [Building a Linear-Gradient Mixin](http://www.sitepoint.com/building-linear-gradient-mixin-sass/)
@@ -3530,7 +3530,7 @@ Now, there is a lot of room in a Sass project for warnings and errors. Basically
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [An Introduction To Error Handling](http://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996)
 * [Building a Logger Mixin](http://webdesign.tutsplus.com/tutorials/building-a-logger-mixin-in-sass--cms-22070)
@@ -3680,7 +3680,7 @@ Anyway, I do not forbid the use of Compass although I would not recommend it eit
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Compass](http://compass-style.org/)
 * [Sass Frameworks: Compass or Bourbon](http://www.sitepoint.com/compass-or-bourbon-sass-frameworks/)
@@ -3705,7 +3705,7 @@ Or you can head over to something a bit more casual, like [csswizardry-grids](ht
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [Singularity](http://singularity.gs/)
 * [Singularity: Grids Without Limits](http://fourword.fourkitchens.com/article/singularity-grids-without-limits)
@@ -3909,7 +3909,7 @@ linters:
 
 
 
-### Further reading
+### Letture aggiuntive
 
 * [SCSS-lint](https://github.com/causes/scss-lint)
 * [Clean Up your Sass with SCSS-lint](http://blog.martinhujer.cz/clean-up-your-sass-with-scss-lint/)
