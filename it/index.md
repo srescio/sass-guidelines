@@ -48,10 +48,10 @@ Infine prima di cominciare: se ti è piaciuto questo documento, o se è utile pe
 
 # Indice dei Contenuti
 
-* [Informazioni sull'autore](#about-the-author)
-* [Contribuire](#contributing)
-* [Cosa è Sass](#about-sass)
-  * [Ruby Sass o LibSass](#ruby-sass-or-libsass)
+* [Informazioni sull'autore](#informazioni-sullautore)
+* [Contribuire](#contribuire)
+* [Cosa è Sass](#cosa-%C3%A8-sass)
+  * [Ruby Sass o LibSass](#ruby-sass-o-libsass)
   * [Sass o SCSS](#sass-or-scss)
   * [Altri Preprocessori](#other-preprocessors)
 * [Introduction](#introduction)
