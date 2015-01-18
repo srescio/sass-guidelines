@@ -173,7 +173,7 @@ Per i progetti non-Ruby che necessitano di una integrazione di workflow, LibSass
 
 * [LibSass](https://github.com/sass/libsass)
 * [Sass-Compatibility](http://sass-compatibility.github.io)
-* [Passare da Ruby Sass a LibSass](http://www.sitepoint.com/switching-ruby-sass-libsass/)
+* [Switching from Ruby Sass to LibSass](http://www.sitepoint.com/switching-ruby-sass-libsass/)
 
 
 
