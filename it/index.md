@@ -52,7 +52,7 @@ Infine prima di cominciare: se ti è piaciuto questo documento, o se è utile pe
 * [Contribuire](#contribuire)
 * [Cosa è Sass](#cosa-%C3%A8-sass)
   * [Ruby Sass o LibSass](#ruby-sass-o-libsass)
-  * [Sass o SCSS](#sass-or-scss)
+  * [Sass o SCSS](#sass-o-scss)
   * [Altri Preprocessori](#other-preprocessors)
 * [Introduction](#introduction)
   * [Why A Styleguide](#why-a-styleguide)
@@ -180,17 +180,17 @@ Per i progetti non-Ruby che necessitano di una integrazione di workflow, LibSass
 
 
 
-## Sass or SCSS
+## Sass o SCSS
 
-There is quite a lot of confusion regarding the semantics of the name *Sass*, and for good reason: Sass means both the preprocessor and its own syntax. Not very convenient, is it?
+C'è un sacco di confusione riguardo il significato del nome *Sass*, e ci sono buoni motivi: Sass identifica sia il preprocessore sia la sua sintassi. Non molto intuitivo, vero?
 
-You see, Sass initially described a syntax of which the defining characteristic was its indentation-sensitivity. Soon enough, Sass maintainers decided to close the gap between Sass and CSS by providing a CSS-friendly syntax called *SCSS* for *Sassy CSS*. The motto is: if it's valid CSS, it's valid SCSS.
+Il motivo è che Sass inizialmente descriveva una sintassi la cui caratteristica peculiare era la sensibilità all'indentazione. In breve tempo, i manutentori di Sass decisero di colmare il divario tra Sass e CSS mettendo a disposizione una sintassi simile al CSS chiamata *SCSS* che sta per *Sassy CSS*. Il motto è: se è CSS valido, è SCSS valido.
 
-Since then, Sass (the preprocessor) has been providing two different syntaxes: Sass (not all-caps, [please](http://sassnotsass.com)), also known as *the indented syntax*, and SCSS. Which one to use is pretty much up to you since both are strictly equivalent in features. It's only a matter of aesthetics at this point.
+Da allora, Sass (il preprocessore) mette a disposizione due sintassi: Sass (non tutto maiuscolo, [per favore](http://sassnotsass.com)), conosciuto anche come *la sintassi predefinita*, e SCSS. La decisione su quale delle due utilizzare è soggettiva dato che entrambe sono strettamente equivalenti in termini di funzionalità. È solo una questione di estetica.
 
-Sass's whitespace-sensitive syntax relies on indentation to get rid of braces, semi-colons and other punctuation symbols, leading to a leaner and shorter syntax. Meanwhile, SCSS is easier to learn since it's mostly some tiny extra bits on top of CSS.
+La sintassi sensibile agli spazi di Sass si basa sull'indentazione per fare a meno delle parentesi, dei punti e virgola ed altri simboli di punteggiatura, ottenendo una sintassi più breve e minimale. SCSS invece è più semplice da apprendere dato che aggiunge funzionalità sul normale CSS.
 
-I, myself, prefer SCSS over Sass because it is closer to CSS and friendlier to most developers. Because of that, I will use SCSS rather than Sass throughout these guidelines.
+Personalmente preferisco SCSS rispetto a Sass perchè è più vicina al CSS e più semplice per molti sviluppatori. Per questo motivo, userò SCSS invece che Sass nel corso di queste linee guida.
 
 
 
