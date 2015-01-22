@@ -1,20 +1,20 @@
 
-# Contributing
+# Contribuire
 
-Sass Guidelines is a free project that I maintain in my spare time. Needless to say, it is quite a large amount of work to keep everything up-to-date, documented and relevant. Obviously, knowing that you liked this styleguide is already much appreciated!
+Sass Guidelines è un progetto gratuito che mantengo nel mio tempo libero. Inutile dire che serve molto lavoro per mantenere tutto aggiornato, documentato e rilevante. Ovviamente, sapere che hai apprezzato questa styleguide significa già molto!
 
-Now if you feel like contributing, please know that tweeting about it, spreading the word, or fixing a tiny typo by opening an issue or a pull-request on the [GitHub repository](https://github.com/HugoGiraudel/sass-guidelines) would be great!
+Se desideri anche contribuire, sappi che twittarlo sul tuo profilo, spargere il verbo, o sistemare un piccolo errore di battitura aprendo un issue o una pull-request sul [repository GitHub](https://github.com/HugoGiraudel/sass-guidelines) sarebbe grandioso!
 
-Last but not least before we start: if you enjoyed this document, or if it is useful for you or your team, please consider supporting it!
+Infine prima di cominciare: se ti è piaciuto questo documento, o se è utile per te o il tuo team, considera la possibilità di supportarlo!
 
 <div class="button-wrapper">
   <a href="https://gum.co/sass-guidelines" target="_blank" class="button">
     {% include icons/dollar.html %}
-    Support Sass Guidelines
+    Supporta Sass Guidelines
   </a>
   {% capture tweet %}{{ site.title }}, {{ site.description }} by @{{ site.twitter_username }} –{% endcapture %}
   <a href="https://twitter.com/share?text={{ tweet | cgi_escape }}&url={{ site.url }}" target="_blank" class="button">
     {% include icons/twitter.html %}
-    Spread the word
+    Spargi il verbo
   </a>
 </div>
