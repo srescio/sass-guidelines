@@ -13,7 +13,7 @@ Il punto non è trasformare il CSS in un vero e proprio linguaggio di programmaz
 
 Detto questo, ci sono molti modi per usare queste nuove funzionalità. Alcuni buoni, alcuni sbagliati, alcuni insoliti. Queste linee guida sono pensate per darti un approccio consistente e documentato alla scrittura del codice Sass.
 
-### Letture aggiuntive
+### Letture Aggiuntive
 
 * [Sass](http://sass-lang.com)
 * [Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
@@ -35,7 +35,7 @@ Per i progetti non-Ruby che necessitano di una integrazione di workflow, LibSass
 
 
 
-### Letture aggiuntive
+### Letture Aggiuntive
 
 * [LibSass](https://github.com/sass/libsass)
 * [Sass-Compatibility](http://sass-compatibility.github.io)
@@ -60,7 +60,7 @@ Personalmente preferisco SCSS rispetto a Sass perchè è più vicina al CSS e pi
 
 
 
-### Letture aggiuntive
+### Letture Aggiuntive
 
 * [What's the difference between Sass and SCSS](http://www.sitepoint.com/whats-difference-sass-scss/)
 
@@ -89,7 +89,7 @@ Mettere a disposizione oggi la sintassi di domani è un'idea nobile, tuttavia de
 
 
 
-### Letture aggiuntive
+### Letture Aggiuntive
 
 * [LESS](http://lesscss.org/)
 * [Stylus](http://learnboost.github.io/stylus/)

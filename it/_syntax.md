@@ -1,28 +1,28 @@
 
-# Syntax & formatting
+# Sintassi e formattazione
 
-If you ask me, the very first thing a styleguide should do is describe the way we want our code to look.
+A mio parere, la primissima cosa che una styleguide dovrebbe fare è descrivere come vogliamo che appaia il codice.
 
-When several developers are involved in writing CSS on the same project(s), it is only a matter of time before one of them starts doing things their own way. Code guidelines that promote consistency not only prevent this, but also help when it comes to reading and updating the code.
+Quando più sviluppatori sono coinvolti nella scrittura del CSS su uno stesso progetto, è solo una questione di tempo prima che ognuno inizi a fare le cose a modo proprio. Le lnee guida sul codice che promuovono la consistenza non solo prevengono questa situazione, ma aiutano anche nella lettura e nell'aggiornamento del codice.
 
-Roughly, we want (shamelessly inspired by [CSS Guidelines](http://cssguidelin.es/#syntax-and-formatting)):
+Grosso modo, è auspicabile (sfacciatamente ispirato a [CSS Guidelines](http://cssguidelin.es/#syntax-and-formatting)):
 
-* two (2) spaces indents, no tabs;
-* ideally, 80-characters wide lines;
-* properly written multi-line CSS rules;
-* meaningful use of whitespace.
+* due (2) spazi per indentazione, niente tabs;
+* idealmente, righe larghe 80 caratteri;
+* regole CSS scritte correttamente su più righe;
+* uso significativo degli spazi bianchi.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 .foo {
   display: block;
   overflow: hidden;
   padding: 0 1em;
 }
 
-// Nope
+// Sbagliato
 .foo {
     display: block; overflow: hidden;
 
@@ -32,8 +32,8 @@ Roughly, we want (shamelessly inspired by [CSS Guidelines](http://cssguidelin.es
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Since Sass indented-syntax forces those coding standards
-// There is no wrong way of proceeding
+// Dato che la sintassi predefinita di Sass costringe a questi standard di scrittura
+// Non c'è un modo sbagliato di procedere
 .foo
   display: block
   overflow: hidden
@@ -42,68 +42,68 @@ Roughly, we want (shamelessly inspired by [CSS Guidelines](http://cssguidelin.es
   </div>
 </div>
 
-We will not tackle the question of file organization in this section. It is the object of [another section](#architecture).
+Non ci occuperemo della questione relativa all'organizzazione dei file in questa sezione. Sarà l'oggetto di [un'altra sezione](#architecture).
 
 
 
 
 
 
-## Strings
+## Stringhe
 
-CSS does not require strings to be quoted, not even those containing spaces. Take font-family names for instance: it doesn't matter whether you wrap them in quotes for the CSS parser.
+Il CSS non richiede che le stringhe siano virgolettate, neanche quando contengono degli spazi. Prendiamo i nomi delle font-family oer esempio: non importa se li racchiudi o meno tra virgolette per il parser CSS.
 
-Because of this, Sass *also* does not require strings to be quoted. Even better (and *luckily*, you'll concede), a quoted string is strictly equivalent to its unquoted twin (e.g. `'abc'` is strictly equal to `abc`).
+Per questo motivo, Sass *a sua volta* non richiede che le stringhe siano virgolettate. Ancora meglio (e *fortunatamente*, se mi concedi), una stringa virgolettata è strettamente equivalente alla sua controparte senza virgolette (e.g. `'abc'` è strettamente equivalente a `abc`).
 
-That being said, languages that do not require strings to be quoted are definitely a minority and so, **strings should always be wrapped with single quotes** in Sass (single being easier to type than double on *qwerty* keyboards). Besides consistency with other languages, including CSS' cousin JavaScript, there are several reasons for this choice:
+Detto questo, i linguaggi che non richiedono che le stringhe siano virgolettate sono certametne una minoranza, per questo **le stringhe dovrebbero sempre essere virgolettate con apici singoli** in Sass (singoli perché più semplici da scrivere dei doppi su tastiere *qwerty*). Oltre alla consistenza con gli altri linguaggi, incluso il cugino del CSS ovvero JavaScript, ci sono vari motivi per questa scelta:
 
-* color names are treated as colors when unquoted, which can lead to serious issues;
-* most syntax highlighters will choke on unquoted strings;
-* it helps general readability;
-* there is no valid reason not to quote strings.
+* i nomi dei colori sono trattati come colori se non virgolettati, il che può portare a seri problemi;
+* la maggior parte degli evidenziatori di sintassi hanno problemi con le stringhe non virgolettate;
+* aiuta in generale la leggibilità;
+* non ci sono ragioni valide per non quotare le stringhe.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 $font-stack: 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif;
 
-// Nope
+// Sbagliato
 $font-stack: "Helvetica Neue Light", "Helvetica", "Arial", sans-serif;
 
-// Nope
+// Sbagliato
 $font-stack: Helvetica Neue Light, Helvetica, Arial, sans-serif;
 {% endhighlight %}
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 $font-stack: 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif
 
-// Nope
+// Sbagliato
 $font-stack: "Helvetica Neue Light", "Helvetica", "Arial", sans-serif
 
-// Nope
+// Sbagliato
 $font-stack: Helvetica Neue Light, Helvetica, Arial, sans-serif
 {% endhighlight %}
   </div>
 </div>
 
 <div class="note">
-  <p>In the previous example, <code>sans-serif</code> is not being quoted because it is a specific CSS value that needs to be unquoted.</p>
+  <p>Nell'esempio precedente, <code>sans-serif</code> non è virgolettato perchè è un valore specifico del CSS che deve rimanere tale.</p>
 </div>
 
-URLs should be quoted as well, for the same reasons as above:
+anche le URL dovrebbero essere virgolettate, per le stesse ragioni di cui sopra:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 .foo {
   background-image: url('/images/kittens.jpg');
 }
 
-// Nope
+// Sbagliato
 .foo {
   background-image: url(/images/kittens.jpg);
 }
@@ -111,11 +111,11 @@ URLs should be quoted as well, for the same reasons as above:
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 .foo
   background-image: url('/images/kittens.jpg')
 
-// Nope
+// Sbagliato
 .foo
   background-image: url(/images/kittens.jpg)
 {% endhighlight %}
@@ -124,7 +124,7 @@ URLs should be quoted as well, for the same reasons as above:
 
 
 
-### Further Reading
+### Letture Aggiuntive
 
 * [All You Ever Need to Know About Sass Interpolation](http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)
 * [SassyStrings](https://github.com/HugoGiraudel/SassyStrings)

@@ -56,7 +56,7 @@ Inoltre, citando [Harry Roberts](https://csswizardry.com) ancora una volta, **il
 
 
 
-### Letture aggiuntive
+### Letture Aggiuntive
 
 * [KISS principle](http://en.wikipedia.org/wiki/KISS_principle)
 * [DRY principle](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
