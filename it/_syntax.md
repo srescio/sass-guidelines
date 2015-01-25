@@ -134,26 +134,26 @@ anche le URL dovrebbero essere virgolettate, per le stesse ragioni di cui sopra:
 
 
 
-## Numbers
+## Numeri
 
-In Sass, number is a data type including everything from unitless numbers to lengths, durations, frequencies, angles and so on. This allows calculations to be run on such measures.
+In Sass, un numero è un tipo di dato che include tutto, dai numeri senza unità alle lunghezze, durata, frequenze, angoli e così via. Questo consente di effettuare calcoli su tutte queste misure.
 
 
 
-### Zeros
+### Zero
 
-Numbers should display leading zeros before a decimal value less than one. Never display trailing zeros.
+I numeri dovrebbero mostrare lo zero prima di un valore decimale inferiore a uno. Lo zero finale non è necessario.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 .foo {
   padding: 2em;
   opacity: 0.5;
 }
 
-// Nope
+// Sbagliato
 .foo {
   padding: 2.0em;
   opacity: .5;
@@ -162,12 +162,12 @@ Numbers should display leading zeros before a decimal value less than one. Never
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 .foo
   padding: 2em
   opacity: 0.5
 
-// Nope
+// Sbagliato
 .foo
   padding: 2.0em
   opacity: .5
@@ -177,44 +177,44 @@ Numbers should display leading zeros before a decimal value less than one. Never
 
 
 
-### Units
+### Unità
 
-When dealing with lengths, a `0` value should never ever have a unit.
+Quando si tratta di lunghezze, un valore `0` non dovrebbe mai avere unità.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 $length: 0;
 
-// Nope
+// Sbagliato
 $length: 0em;
 {% endhighlight %}
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 $length: 0
 
-// Nope
+// Sbagliato
 $length: 0em
 {% endhighlight %}
   </div>
 </div>
 
-The most common mistake I can think of regarding numbers in Sass, is thinking that units are just some strings that can be safely appended to a number. While that sounds true, is is certainly not how units work. Think of units as algebraic symbols. For instance, in the real world, multiplying 5 inches by 5 inches gives you 25 square inches. The same logic applies to Sass.
+L'errore più comune che mi viene in mente riguardo ai numeri in Sass, è pensare che le unità siano solo delle stringhe che possono essere tranquillamente affisse ad un numero. Anche se sembra così, non è così che funzionano le unità. Pensa alle unità come dei simboli algebrici. Per esempio, nel mondo reale, moltiplicare 5 pollici per 5 pollici restituisce 25 pollici quadrati. La stessa logica si applica in Sass. 
 
-To add a unit to a number, you have to multiply this number by *1 unit*.
+Per aggiungere una unità ad un numero, devi moliplicare il numero per *1 unità*.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
 $value: 42;
 
-// Yep
+// Giusto
 $length: $value * 1px;
 
-// Nope
+// Sbagliato
 $length: $value + px;
 {% endhighlight %}
   </div>
@@ -222,16 +222,16 @@ $length: $value + px;
 {% highlight sass %}
 $value: 42
 
-// Yep
+// Giusto
 $length: $value * 1px
 
-// Nope
+// Sbagliato
 $length: $value + px
 {% endhighlight %}
   </div>
 </div>
 
-Note that adding *0 member of that unit* also works, but I would rather recommend the aforementioned method since adding *0 unit* can be a bit confusing. Indeed, when trying to convert a number to another compatible unit, adding 0 will not do the trick.
+Nota che sommare *un valore 0 di una unità* funziona ugualmente, ma consiglierei il metodo di cui sopra dato che sommare *0 unità* può essere un po confusionario. Naturalmente, se si cerca di convertire un numero verso un'altra unità, sommare 0 all'unità preesistente non funzionerà.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -260,19 +260,19 @@ $value: 0px + 1in
   </div>
 </div>
 
-In the end, it really depends on what you are trying to achieve. Just keep in mind that adding the unit as a string is not a good way to proceed.
+Alla fine molto dipende da ciò che cerchi di ottenere. Tieni solo a mente che sommare le unità come stringhe non è un buon modo di procedere.
 
-To remove the unit of a value, you have to divide it by *one unit of its kind*.
+Per rimuoverè l'unità da un valore, devi dividerlo per *una unità del suo stesso tipo*.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
 $length: 42px;
 
-// Yep
+// Giusto
 $value: $length / 1px;
 
-// Nope
+// Sbagliato
 $value: str-slice($length + unquote(''), 1, 2);
 {% endhighlight %}
   </div>
@@ -280,32 +280,32 @@ $value: str-slice($length + unquote(''), 1, 2);
 {% highlight sass %}
 $length: 42px
 
-// Yep
+// Giusto
 $value: $length / 1px
 
-// Nope
+// Sbagliato
 $value: str-slice($length + unquote(''), 1, 2)
 {% endhighlight %}
   </div>
 </div>
 
-Appending a unit as a string to a number results in a string, preventing any additional operation on the value. Slicing the numeric part of a number with a unit also results in a string. This is not what you want.
+Appendere una unità come stringa ad un numero risulta in una stringa, impedendo ulteriori operazioni sul valore. Dividire la parte numerica di un numero con una unità dà nuovamente come risultato una stringa. Non è in genere quello che si vuole.
 
 
 
-### Calculations
+### Calcoli
 
-**Top-level numeric calculations should always be wrapped in parentheses**. Not only does this requirement dramatically improve readability, it also prevents some edge cases by forcing Sass to evaluate the contents of the parentheses.
+**Calcoli numerici di primo livello dovrebbero sempre essere racchiusi tra parentesi**. Non solo questo requisito migliora drasticamente la leggibilità, previene anche alcuni casi limite costringendo Sass ad elaborare i contenuti delle parentesi.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 .foo {
   width: (100% / 3);
 }
 
-// Nope
+// Sbagliato
 .foo {
   width: 100% / 3;
 }
@@ -313,11 +313,11 @@ Appending a unit as a string to a number results in a string, preventing any add
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 .foo
   width: (100% / 3)
 
-// Nope
+// Sbagliato
 .foo
   width: 100% / 3
 {% endhighlight %}
@@ -326,18 +326,18 @@ Appending a unit as a string to a number results in a string, preventing any add
 
 
 
-### Magic numbers
+### Numeri Magici
 
-"Magic number" is an [old school programming](http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants) term for *unnamed numerical constant*. Basically, it's just a random number that happens to *just work*™ yet is not tied to any logical explanation.
+"Numero magico" è un [termine informatico](http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants) che stà per *costante numerica senza nome*. Basilarmente, è un numero randomico che *semplicemente funziona*™ senza essere legato ad alcuna spiegazione logica.
 
-Needless to say **magic numbers are a plague and should be avoided at all costs**. When you cannot manage to find a reasonable explanation for why a number works, add an extensive comment explaining how you got there and why you think it works. Admitting you don't know why something works is still more helpful to the next developer than them having to figure out what's going on from scratch.
+Inutile dire che **i numeri magici sono una piaga e dovrebbero essere evitati a tutti i costi**. Quando non riesci a trovare una spiegazione ragionevole sul perchè un determinato numero funziona, aggiungi un commento esplicativo che argomenti in che comodo sei arrivato ad ottenerlo e perchè pensi che funzioni. Ammettere di non sapere perché qualcosa funziona è comunque più utile per il prossimo sviluppatore piuttosto che costringerlo a cercare di capire la situazione da zero.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
 /**
- * 1. Magic number. This value is the lowest I could find to align the top of
- * `.foo` with its parent. Ideally, we should fix it properly.
+ * 1. Numero magico. questo valore è il più basso che ho trovato per allineare il margine superiore di 
+ * `.foo` con il suo genitore. Idealmente, dovremmo aggiustarlo correttamente.
  */
 .foo {
   top: 0.327em; /* 1 */
@@ -347,8 +347,8 @@ Needless to say **magic numbers are a plague and should be avoided at all costs*
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
 /**
- * 1. Magic number. This value is the lowest I could find to align the top of
- * `.foo` with its parent. Ideally, we should fix it properly.
+ * 1. Numero magico. questo valore è il più basso che ho trovato per allineare il margine superiore di
+ * `.foo` con il suo genitore. Idealmente, dovremmo aggiustarlo correttamente.
  */
 .foo
   top: 0.327em /* 1 */
@@ -358,7 +358,7 @@ Needless to say **magic numbers are a plague and should be avoided at all costs*
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [Use Lengths, Not Strings](http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/)
 * [Correctly Adding Unit to Number](http://css-tricks.com/snippets/sass/correctly-adding-unit-number/)
