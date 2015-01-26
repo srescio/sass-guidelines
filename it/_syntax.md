@@ -370,32 +370,32 @@ Inutile dire che **i numeri magici sono una piaga e dovrebbero essere evitati a 
 
 
 
-## Colors
+## Colori
 
-Colors occupy an important place in the CSS language. Naturally, Sass ends up being a valuable ally when it comes to manipulating colors, mostly by providing a handful of [powerful functions](http://sass-lang.com/documentation/Sass/Script/Functions.html).
+I colori sono una parte importante del linguaggio CSS. Naturalmente, Sass è un alleato prezioso quando si tratta di manipolare i colori, soprattutto mettendo a disposizione delle [funzioni potenti](http://sass-lang.com/documentation/Sass/Script/Functions.html).
 
 
 
-### Color formats
+### Formati dei colori
 
-In order to make colors as simple as they can be, my advice would be to respect the following order of preference for color formats:
+In modo da rendere i colori semplici da gestire, il mio consiglio è di rispettare il seguente ordine di preferenza per il formato dei colori:
 
-1. [CSS color keywords](http://www.w3.org/TR/css3-color/#svg-color);
-1. [HSL notation](http://en.wikipedia.org/wiki/HSL_and_HSV);
-1. [RGB notation](http://en.wikipedia.org/wiki/RGB_color_model);
-1. Hexadecimal notation. Preferably lowercase and shortened when possible.
+1. [Parole chiave colori CSS](http://www.w3.org/TR/css3-color/#svg-color);
+1. [Notazione HSL](http://en.wikipedia.org/wiki/HSL_and_HSV);
+1. [Notazione RGB](http://en.wikipedia.org/wiki/RGB_color_model);
+1. Notazione esadecimale. Preferibilmente in minuscolo ed abbreviata quando possibile.
 
-For starters, keywords often speak for themselves. The HSL representation is not only the easiest one for the human brain to comprehend<sup>[citation needed]</sup>, it also makes it easy for stylesheet authors to tweak the color by adjusting the hue, saturation and lightness individually. RGB still has the benefit of showing right away if the color is more of a blue, a green or a red but it does not make it easy to build a color from the three parts. Lastly, hexadecimal is close to indecipherable for the human mind.
+Per i principianti, le parole chiave spesso sono auto esplicative. La rappresentazione HSL non è solo la più semplice da comprendere per il cervello umano<sup>[citazione necessaria]</sup>, rende anche più semplice agli autori dei fogli di stile modificare il colore aggiustando tonalità, saturazione e luminosità individualmente. RGB ha il beneficio di evidenziare subito se un colore è più tendente al blu, verde o rosso ma non facilita la creazione di un colore composto di queste tre parti. Infine, gli esadecimali sono quasi indecifrabili per la mente umana.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 .foo {
   color: red;
 }
 
-// Nope
+// Sbagliato
 .foo {
   color: #FF0000;
 }
@@ -403,29 +403,29 @@ For starters, keywords often speak for themselves. The HSL representation is not
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 .foo
   color: red
 
-// Nope
+// Sbagliato
 .foo
   color: #FF0000
 {% endhighlight %}
   </div>
 </div>
 
-When using HSL or RGB notation, always add a single space after a comma (`,`) and no space between parentheses (`(`, `)`) and content.
+Quando si usa la notazione HSL o RGB, è bene aggiungere uno spazio singolo dopo una virgola (`,`) e nessuno spazio tra le parentesi (`(`, `)`) ed il contenuto.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 .foo {
   color: rgba(0, 0, 0, 0.1);
   background: hsl(300, 100%, 100%);
 }
 
-// Nope
+// Sbagliato
 .foo {
   color: rgba(0,0,0,0.1);
   background: hsl( 300, 100%, 100% );
@@ -434,12 +434,12 @@ When using HSL or RGB notation, always add a single space after a comma (`,`) an
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 .foo
   color: rgba(0, 0, 0, 0.1)
   background: hsl(300, 100%, 100%)
 
-// Nope
+// Sbagliato
 .foo
   color: rgba(0,0,0,0.1)
   background: hsl( 300, 100%, 100% )
@@ -449,9 +449,9 @@ When using HSL or RGB notation, always add a single space after a comma (`,`) an
 
 
 
-### Colors and variables
+### Colori e variabili
 
-When using a color more than once, store it in a variable with a meaningful name representing the color.
+Quando si usa un colore più di una volta, memorizzalo in una variabile con un nome significativo che rappresenti il colore.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -466,7 +466,7 @@ $sass-pink: #c69
   </div>
 </div>
 
-Now you are free to use this variable wherever you want. However, if your usage is strongly tied to a theme, I would advise against using the variable as is. Instead, store it in another variable with a name explaining how it should be used.
+Ora sei libero di usare questa variabile ovunque tu voglia. Tuttavia, se il suo utilizzo è strettamente legato ad un tema, sconsiglierei di usare la variabile così com'è. Salvalo invece in un'altra variabile con un nome che spiega come dovrebbe essere usato.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -481,31 +481,31 @@ $main-theme-color: $sass-pink
   </div>
 </div>
 
-Doing this would prevent a theme change leading to something like `$sass-pink: blue`.
+Così facendo si evita che un cambio di tema possa portare a qualcosa come `$sass-pink: blue`.
 
 
 
-### Lightening and darkening colors
+### Schiarire e scurire i colori
 
 
 
-Both [`lighten`](http://sass-lang.com/documentation/Sass/Script/Functions.html#lighten-instance_method) and [`darken`](http://sass-lang.com/documentation/Sass/Script/Functions.html#darken-instance_method) functions manipulate the lightness of a color in the HSL space by adding to or substracting from the lightness in the HSL space. Basically, they are nothing but aliases for the `$lightness` parameter of the [`adjust-color`](http://sass-lang.com/documentation/Sass/Script/Functions.html#adjust_color-instance_method) function.
+Le funzioni [`lighten`](http://sass-lang.com/documentation/Sass/Script/Functions.html#lighten-instance_method) e [`darken`](http://sass-lang.com/documentation/Sass/Script/Functions.html#darken-instance_method) manipolano la luminosità di un colore nello spazio HSL aggiungendo o sottraendo luminosità. Basilarmente non sono altro che degli alias per il parametro `$lightness` della funzione [`adjust-color`](http://sass-lang.com/documentation/Sass/Script/Functions.html#adjust_color-instance_method).
 
-The thing is, those functions often do not provide the expected result. On the other hand, the [`mix`](http://sass-lang.com/documentation/Sass/Script/Functions.html#mix-instance_method) function is a nice way to lighten or darken a color by mixing it with either `white` or `black`.
+Il fatto è che queste funzioni spesso non danno il risultato che ci si aspetta. La funzione [`mix`](http://sass-lang.com/documentation/Sass/Script/Functions.html#mix-instance_method) invece è un buon modo di schiarire o scurire un colore mischiandolo con bianco `white` o il nero `black`.
 
-The benefit of using `mix` rather than one of the two aforementioned functions is that it will progressively go to black (or white) as you decrease the proportion of the color, whereas `darken` and `lighten` will quickly blow out a color all the way to black or white.
+Il benefico di usare `mix` invece di una delle due funzioni menzionate sopra è che il colore tenderà gradualmente al bianco o al nero in base a quanto diminuisce la proporzione con il colore, mentre `darken` e `lighten` vanno rapidamente a sovrascrivere un colore con il bianco o il nero.
 
 <figure role="group">
-  <img src="/assets/images/lighten-darken-mix.png" alt="Illustration of the difference between lighten/darken and mix Sass functions" />
-  <figcaption>Illustration of the difference between <code>lighten</code>/<code>darken</code> and <code>mix</code> by <a href="http://codepen.io/KatieK2/pen/tejhz/" target="_blank">KatieK</a></figcaption>
+  <img src="/assets/images/lighten-darken-mix.png" alt="Illustrazione della differenza tra le funzioni Sass lighten/darken e mix" />
+  <figcaption>Illustrazione della differenza tra <code>lighten</code>/<code>darken</code> e <code>mix</code> di <a href="http://codepen.io/KatieK2/pen/tejhz/" target="_blank">KatieK</a></figcaption>
 </figure>
 
-If you don't want to write the `mix` function every time, you can create two easy-to-use functions `tint` and `shade` (which are also a part of [Compass](http://compass-style.org/reference/compass/helpers/colors/#shade)) to do the same thing:
+Se non vuoi scrivere la funzione `mix` ogni volta, puoi creare due funzioni `tint` e `shade` semplici da usare (che fanno anche parte di [Compass](http://compass-style.org/reference/compass/helpers/colors/#shade)) per fare la stessa cosa:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-/// Slightly lighten a color
+/// Schiarisce leggermente un colore
 /// @access public
 /// @param {Color} $color - color to tint
 /// @param {Number} $percentage - percentage of `$color` in returned color
@@ -514,7 +514,7 @@ If you don't want to write the `mix` function every time, you can create two eas
   @return mix($color, white, $percentage);
 }
 
-/// Slightly darken a color
+/// Scurisce leggermente un colore
 /// @access public
 /// @param {Color} $color - color to shade
 /// @param {Number} $percentage - percentage of `$color` in returned color
@@ -526,7 +526,7 @@ If you don't want to write the `mix` function every time, you can create two eas
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-/// Slightly lighten a color
+/// Schiarisce leggermente un colore
 /// @access public
 /// @param {Color} $color - color to tint
 /// @param {Number} $percentage - percentage of `$color` in returned color
@@ -534,7 +534,7 @@ If you don't want to write the `mix` function every time, you can create two eas
 @function tint($color, $percentage)
   @return mix($color, white, $percentage)
 
-/// Slightly darken a color
+/// Scurisce leggermente un colore
 /// @access public
 /// @param {Color} $color - color to shade
 /// @param {Number} $percentage - percentage of `$color` in returned color
@@ -546,12 +546,12 @@ If you don't want to write the `mix` function every time, you can create two eas
 </div>
 
 <div class="note">
-  <p>The <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method"><code>scale-color</code></a> function is designed to scale properties more fluidly by taking into account how high or low they already are. It should provide results that are as nice as <code>mix</code>'s but with a clearer calling convention. The scaling factor isn't exactly the same though.</p>
+  <p>La funzione <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method"><code>scale-color</code></a> è pensata per scalare le proprietà in maniera più fluida prendendo in considerazione quanto sono già alte o basse. Dovrebbe dare dei risultati simili a <code>mix</code> ma con una convenzione più chiara. Tuttavia il fattore di scala non è esattamente uguale.</p>
 </div>
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [A Visual Guide to Sass & Compass Color Functions](http://jackiebalzer.com/color)
 * [How to Programmatically Go From One Color to Another](http://thesassway.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass)
