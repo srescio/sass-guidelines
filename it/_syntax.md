@@ -564,73 +564,73 @@ Se non vuoi scrivere la funzione `mix` ogni volta, puoi creare due funzioni `tin
 
 
 
-## Lists
+## Liste
 
-Lists are the Sass equivalent of arrays. A list is a flat data structure (unlike [maps](#maps)) intended to store values of any type (including lists, leading to nested lists).
+Le liste sono l'equivalente di Sass degli array. Una lista è una struttura di dati piatta (diversamente dalle [mappe](#maps)) intesa per memorizzare valori di ogni tipo (incluse liste, permettendo annidamenti di liste).
 
-Lists should respect the following guidelines:
+Le liste dovrebbero rispettare le seguenti linee guida:
 
-* unless it is too long to fit on an 80-character line, always display it on a single line;
-* unless it is used as is for CSS purposes, always use comma as a delimiter;
-* unless it is empty or nested within another list, never write the parenthesis;
-* never add a trailing comma.
+* a meno che non siano troppo lunghe per rientrare in una riga di 80 caratteri, mostrarle sempre su una riga singola;
+* a meno che non sia utilizzata così com'è per usarla nel CSS, separe sempre gli elementi con una virgola;
+* a meno che non sia vuota o annidata in un altra lista, non usare mai le parentesi;
+* non aggiungere mai una virgola finale.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 $font-stack: 'Helvetica', 'Arial', sans-serif;
 
-// Nope
+// Sbagliato
 $font-stack:
   'Helvetica',
   'Arial',
   sans-serif;
 
-// Nope
+// Sbagliato
 $font-stack: 'Helvetica' 'Arial' sans-serif;
 
-// Nope
+// Sbagliato
 $font-stack: ('Helvetica', 'Arial', sans-serif);
 
-// Nope
+// Sbagliato
 $font-stack: ('Helvetica', 'Arial', sans-serif,);
 {% endhighlight %}
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 $font-stack: 'Helvetica', 'Arial', sans-serif
 
-// Nope (since it is not supported)
+// Sbagliato (dato che non è supportato)
 $font-stack:
   'Helvetica',
   'Arial',
   sans-serif
 
-// Nope
+// Sbagliato
 $font-stack: 'Helvetica' 'Arial' sans-serif
 
-// Nope
+// Sbagliato
 $font-stack: ('Helvetica', 'Arial', sans-serif)
 
-// Nope
+// Sbagliato
 $font-stack: ('Helvetica', 'Arial', sans-serif,)
 {% endhighlight %}
   </div>
 </div>
 
-When adding new items to a list, always use the provided API. Do not attempt to add new items manually.
+Quando si aggiungono nuovi elementi ad una lista, usare sempre le API. Non cercare di aggiungere nuovi elementi manualmente.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
 $shadows: 0 42px 13.37px hotpink;
 
-// Yep
+// Giusto
 $shadows: append($shadows, $shadow, comma);
 
-// Nope
+// Sbagliato
 $shadows: $shadows, $shadow;
 {% endhighlight %}
   </div>
@@ -638,10 +638,10 @@ $shadows: $shadows, $shadow;
 {% highlight sass %}
 $shadows: 0 42px 13.37px hotpink
 
-// Yep
+// Giusto
 $shadows: append($shadows, $shadow, comma)
 
-// Nope
+// Sbagliato
 $shadows: $shadows, $shadow
 {% endhighlight %}
   </div>
@@ -649,7 +649,7 @@ $shadows: $shadows, $shadow
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [SassyLists](http://sassylists.com)
 
