@@ -658,49 +658,49 @@ $shadows: $shadows, $shadow
 
 
 
-## Maps
+## Mappe
 
-Since Sass 3.3, stylesheet authors can define maps &mdash; the Sass term for associative arrays, hashes or even JavaScript objects. A map is a data structure mapping keys (that can be any data type, including maps although I wouldn't recommend it) to values of any type.
+A partire da Sass 3.3, gli autori dei fogli di stile possono definire delle mappe &mdash; il termine Sass che definisce gli array associativi, hash simili a oggetti JavaScript. Una mappa è una struttura dati che associa delle chiavi (che possono essere costituite da qualunque tipo di dato, incluse altre mappe ma lo sconsiglierei) a dei valori di qualunque tipo.
 
-Maps should be written as follows:
+Le mappe dovrebbero essere scritte come segue:
 
-* space after the colon (`:`);
-* opening brace (`(`) on the same line as the colon (`:`);
-* **quoted keys** if they are strings (which represents 99% of the cases);
-* each key/value pair on its own new line;
-* comma (`,`) at the end of each key/value;
-* **trailing comma** (`,`) on last item to make it easier to add, remove or reorder items;
-* closing brace (`)`) on its own new line;
-* no space or new line between closing brace (`)`) and semi-colon (`;`).
+* uno spazio dopo i due punti (`:`);
+* parentesi tonda aoerta (`(`) sulla stessa riga dei due punti (`:`);
+* **chiavi virgolettate** se sono stringhe (che rappresenta il 99% dei casi);
+* ogni coppia chiave/valore deve stare su una propria riga;
+* una virgola alla fine di ogni coppia chiave/valore;
+* **virgola finale** (`,`) sull'ultimo elemento per facilitare l'aggiunta, rimozione o riordinamento degli elementi;
+* parentesi tonda chiusa (`)`) su una nuova riga;
+* nessuno spazio o nuova riga tra la parentesi tonda chiusa (`)`) e il punto e virgola (`;`).
 
-Illustration:
+Illustrazione:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 $breakpoints: (
   'small': 767px,
   'medium': 992px,
   'large': 1200px,
 );
 
-// Nope
+// Sbagliato
 $breakpoints: ( small: 767px, medium: 992px, large: 1200px );
 {% endhighlight %}
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 $breakpoints: ('small': 767px, 'medium': 992px, 'large': 1200px,)
 
-// Nope
+// Sbagliato
 $breakpoints: ( 'small': 767px, 'medium': 992px, 'large': 1200px )
 
-// Nope
+// Sbagliato
 $breakpoints: (small: 767px, medium: 992px, large: 1200px,)
 
-// Nope (since it is not supported)
+// Sbagliato (poichè non è supportato)
 $breakpoints: (
   'small': 767px,
   'medium': 992px,
