@@ -700,7 +700,7 @@ $breakpoints: ( 'small': 767px, 'medium': 992px, 'large': 1200px )
 // Sbagliato
 $breakpoints: (small: 767px, medium: 992px, large: 1200px,)
 
-// Sbagliato (poichè non è supportato)
+// Sbagliato (dato che non è supportato)
 $breakpoints: (
   'small': 767px,
   'medium': 992px,
@@ -712,9 +712,9 @@ $breakpoints: (
 
 
 
-### Debugging a Sass map
+### Debuggare una Sass map
 
-If you ever find yourself lost, wondering what kind of crazy magic is happening in a Sass map, worry not because there is still a way to be saved.
+Se dovessi sentirti disorientato, domandandoti che tipo di magia sia in opera all'interno di una Sass map, non preoccuparti perchè c'è un modo per uscirne.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -752,12 +752,12 @@ If you ever find yourself lost, wondering what kind of crazy magic is happening 
   </div>
 </div>
 
-If you are interested in knowing the depth of the map, add the following function. The mixin will display it automatically.
+Se vuoi sapere la profondità di una mappa, aggiungi la seguente funzione. Il mixin la visualizzerà automaticamente.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-/// Compute the maximum depth of a map
+/// Calcola la profondità massima di una mappa
 /// @param {Map} $map
 /// @return {Number} max depth of `$map`
 @function map-depth($map) {
@@ -775,7 +775,7 @@ If you are interested in knowing the depth of the map, add the following functio
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-/// Compute the maximum depth of a map
+/// Calcola la profondità massima di una mappa
 /// @param {Map} $map
 /// @return {Number} max depth of `$map`
 @function map-depth($map)
@@ -792,7 +792,7 @@ If you are interested in knowing the depth of the map, add the following functio
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [Using Sass Maps](http://www.sitepoint.com/using-sass-maps/)
 * [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/)
@@ -808,24 +808,24 @@ If you are interested in knowing the depth of the map, add the following functio
 
 
 
-## CSS Ruleset
+## Regole CSS
 
-At this point, this is mostly revising what everybody knows, but here is how a CSS ruleset should be written (at least, according to most guidelines, including [CSS Guidelines](http://cssguidelin.es/#anatomy-of-a-ruleset)):
+A questo punto andiamo a rivisitare nozioni note un po a tutti, comunque questo è il modo in cui si dovrebbe scrivere un insieme di regole CSS (almeno in base alla maggior parte delle guidelines, incluso [CSS Guidelines](http://cssguidelin.es/#anatomy-of-a-ruleset)):
 
-* related selectors on the same line; unrelated selectors on new lines;
-* the opening brace (`{`) spaced from the last selector by a single space;
-* each declaration on its own new line;
-* a space after the colon (`:`);
-* a trailing semi-colon (`;`) at the end of all declarations;
-* the closing brace (`}`) on its own new line;
-* a new line after the closing brace `}`.
+* selettori relazionati su una stessa riga, selettori non relazionati a capo;
+* la parentesi graffa aperta (`{`) separata dall'ultimo selettore da un singolo spazio;
+* ogni dichiarazione su una nuova riga;
+* uno spazio dopo i due punti (`:`);
+* punto e virgola di chiusura (`;`) alla fine di tutte le dichiarazioni;
+* la parentesi graffa di chiusura (`}`) su una nuova riga;
+* una nuova riga dopo la parentesi chiusa `}`.
 
-Illustration:
+Illustrazione:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 .foo, .foo-bar,
 .baz {
   display: block;
@@ -833,7 +833,7 @@ Illustration:
   margin: 0 auto;
 }
 
-// Nope
+// Sbagliato
 .foo,
 .foo-bar, .baz {
     display: block;
@@ -850,7 +850,7 @@ Illustration:
   overflow: hidden
   margin: 0 auto
 
-// Nope
+// Sbagliato
 .foo,
 .foo-bar, .baz
     display: block
@@ -860,15 +860,15 @@ Illustration:
   </div>
 </div>
 
-Adding to those CSS-related guidelines, we want to pay attention to:
+In aggiunta alle guidelines sul CSS, bisogna fare attenzione a:
 
-* local variables being declared before any declarations, then spaced from declarations by a new line;
-* mixin calls with no `@content` coming before any declaration;
-* nested selectors always coming after a new line;
-* mixin calls with `@content` coming after any nested selector;
-* no new line before a closing brace (`}`).
+* variabili locali dichiarate prima di ogni dichiarazione, poi separate dalle dichiarazioni da una nuova riga;
+* chiamate a mixin senza `@content` prima di qualunque dichiarazione;
+* selettori annidati che seguono sempre dopo una nuova riga;
+* chiamate a mixin con `@content` che seguono dopo selettori annidati;
+* nessuna nuova riga prima di una parentesi graffa chiusa (`}`).
 
-Illustration:
+Illustrazione:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -916,7 +916,7 @@ Illustration:
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [Anatomy of a Ruleset](http://cssguidelin.es/#anatomy-of-a-ruleset)
 
@@ -925,14 +925,14 @@ Illustration:
 
 
 
-## Declaration Sorting
+## Ordinamento delle Dichiarazioni
 
-I cannot think of many topics where opinions are as divided as they are regarding declaration sorting in CSS. Concretely, there are two factions here:
+Non mi vengono in mente degli argomenti dove le opinioni sono tanto divergenti quanto per l'ordinamento delle dichiarazioni nel CSS. Concretamente, ci sono due fazioni:
 
-* sticking to the alphabetical order;
-* ordering declarations by type (position, display, colors, font, miscellaneous...).
+* mantenere l'ordine alfabetico;
+* ordinare le dichiarazioni per tipologia (position, display, colors, font, altro...).
 
-There are pros and cons for both ways. On one hand, alphabetical order is universal (at least for languages using the latin alphabet) so there is no argument about sorting one property before another. However, it seems extremely weird to me to see properties such as `bottom` and `top` not right next to each other. Why would animations should appear before the display type? There are a lot of oddities with alphabetical ordering.
+Ci sono pro e contro in entrambi i modi. Da una parte, l'ordine alafabetico è universale (almeno per le lingue che usano l'alfabeto latino) quindi non ci sono dubbi sul mettere un proprietà prima di un'altra. Tuttavia, a me sembra molto strano vedere proprietà come `bottom` e `top` separate anzichè in sequenza. Perchè le animazioni dovrebbero apparire prima della tipologia di display? Ci sono molte stranezze con l'ordinamento alfabetico.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -968,7 +968,7 @@ There are pros and cons for both ways. On one hand, alphabetical order is univer
   </div>
 </div>
 
-On the other hand, ordering properties by type makes perfect sense. Every font-related declarations are gathered, `top` and `bottom` are reunited and reading a ruleset kind of feels like reading a short story. But unless you stick to some conventions like [Idiomatic CSS](https://github.com/necolas/idiomatic-css), there is a lot of room for interpretation in this way of doing things. Where would `white-space` go: font or display? Where does belong `overflow` exactly? What is the property order within a group (it could be alphabetically, oh the irony)?
+D'altra parte, ordinare le proprietà per tipologia ha molto più senso. Ogni dichiarazione relativa al font è raggruppata, `bottom` e `top` sono riuniti e leggendo un insieme di regole sembra di leggere una breve storia. Ma a meno di adottare qualche tipo di convenzione come [Idiomatic CSS](https://github.com/necolas/idiomatic-css), c'è molto spazio per l'interpretazione di quale sia il modo migliore di raggrupare le regole. Dove si collocherebbe `white-space` : font o display? A che gruppo appartiene esattamente `overflow` ? Qual'è l'ordine delle proprietà all'interno di un gruppo (potrebbe essere alfabetico, che ironia)?
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1004,7 +1004,7 @@ On the other hand, ordering properties by type makes perfect sense. Every font-r
   </div>
 </div>
 
-There is also another interesting subtree of type ordering called [Concentric CSS](https://github.com/brandon-rhodes/Concentric-CSS), that seems to be quite popular as well. Basically, Concentric CSS relies on the box-model to define an order: starts outside, moves inward.
+C'è un altro interessante sottoinsieme di tipologie di ordinamento chiamato [Concentric CSS](https://github.com/brandon-rhodes/Concentric-CSS), che sembra abbastanza popolare. Basilarmente, Concentric CSS si basa sul box-model per definire l'ordine: inizia dall'interno, muovendosi verso l'esterno.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1040,22 +1040,22 @@ There is also another interesting subtree of type ordering called [Concentric CS
   </div>
 </div>
 
-I must say I cannot decide myself. A [recent poll on CSS-Tricks](http://css-tricks.com/poll-results-how-do-you-order-your-css-properties/) determined that over 45% developers order their declarations by type against 14% alphabetically. Also, there are 39% that go full random, including myself.
+Devo dire che non riesco a prendere una decisione. Un [sondaggio recente su CSS-Tricks](http://css-tricks.com/poll-results-how-do-you-order-your-css-properties/) ha determinato che oltre il 45% degli sviluppatori ordina le sue dichiarazioni per tipologia contro il 14% in ordine alfabetico. Inoltre, c'è un cospiquo 39% che va a braccio randomicamente, incluso il sottoscritto.
 
 <figure role="group">
-  <img src="/assets/images/css_order_chart.png" alt="Chart showing how developers order their CSS declarations" />
-  <figcaption>Chart showing how developers order their CSS declarations</figcaption>
+  <img src="/assets/images/css_order_chart.png" alt="Grafico che illustra come gli sviluppatori ordinano le dichiarazioni CSS" />
+  <figcaption>Grafico che illustra come gli sviluppatori ordinano le dichiarazioni CSS</figcaption>
 </figure>
 
-Because of this, I will not impose a choice in this styleguide. Pick the one you prefer, as long as you are consistent throughout your stylesheets.
+Per questo motivo, non impongo una scelta in questa styleguide. Scegli quella che preferisci, l'importante è mantenere la consistenza in tutti i fogli di stile.
 
 <div class="note">
-  <p>A <a href="http://peteschuster.com/2014/12/reduce-file-size-css-sorting/">recent study</a> shows that using <a href="https://github.com/csscomb/csscomb.js">CSS Comb</a> (which uses <a href="https://github.com/csscomb/csscomb.js/blob/master/config/csscomb.json">type ordering</a>) for sorting CSS declarations ends up shortening the average file size under Gzip compression by 2.7%, compared to 1.3% when sorting alphabetically.</p>
+  <p>Uno <a href="http://peteschuster.com/2014/12/reduce-file-size-css-sorting/">studio recente</a> mostra che l'utilizzo di <a href="https://github.com/csscomb/csscomb.js">CSS Comb</a> (che usa <a href="https://github.com/csscomb/csscomb.js/blob/master/config/csscomb.json">l'ordinamento tipologico</a>) per ordinare le dichiarazioni CSS riduce il peso medio dei file con compressione Gzip del 2.7%, rispetto all' 1.3% quando l'ordinamento è alfabetico.</p>
 </div>
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [CSS Comb](https://github.com/csscomb/csscomb.js)
 * [Concentric CSS](https://github.com/brandon-rhodes/Concentric-CSS)
@@ -1069,13 +1069,13 @@ Because of this, I will not impose a choice in this styleguide. Pick the one you
 
 
 
-## Selector Nesting
+## Annidamento Selettori
 
-One particular feature Sass provides that is being overly misused by many developers is *selector nesting*. Selector nesting offers a way for stylesheet authors to compute long selectors by nesting shorter selectors within each others.
+Una particolare caratteristica che Sass mette a disposizione che viene frequentemente abusata da molti sviluppatori è *l'annidamento dei selettori*. L'annidamento dei selettori offre agli autori dei fogli di stile un modo per computare selettori lunghi annidando selettori più brevi gli uni dentro gli altri.
 
-### General rule
+### Regola generale
 
-For instance, the following Sass nesting:
+Ad esempio, il seguente annidamento Sass:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1099,7 +1099,7 @@ For instance, the following Sass nesting:
   </div>
 </div>
 
-... will generate this CSS:
+... genererà questo CSS:
 
 {% highlight css %}
 .foo .bar:hover {
@@ -1107,7 +1107,7 @@ For instance, the following Sass nesting:
 }
 {% endhighlight %}
 
-Along the same lines, since Sass 3.3 it is possible to use the current selector reference (`&`) to generate advanced selectors. For instance:
+Allo stesso modo, a partire da Sass 3.3 è possibile usare il riferimento del selettore corrente (`&`) per generare selettori avanzati. Ad esempio:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1128,7 +1128,7 @@ Along the same lines, since Sass 3.3 it is possible to use the current selector 
   </div>
 </div>
 
-... will generate this CSS:
+... genererà questo CSS:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1146,21 +1146,21 @@ Along the same lines, since Sass 3.3 it is possible to use the current selector 
   </div>
 </div>
 
-This method is often used along with [BEM naming conventions](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) to generate `.block__element` and `.block--modifier` selectors based on the original selector (i.e. `.block` in this case).
+Questo metodo è spesso usato insieme a [BEM naming conventions](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) per generare selettori `.block__element` e `.block--modifier` basati sul selettore originale  (i.e. `.block` in questo caso).
 
 <div class="note">
-  <p>While it might be anecdotal, generating new selectors from the current selector reference (<code>&</code>) makes those selectors unsearchable in the codebase since they do not exist per se.</p>
+  <p>Può sembrare un aneddoto, ma generare nuovi selettori tramite il riferimento del selettore corrente (<code>&</code>) rende quei selettori non ricercabili all'interno della codebase dato che non esistono di per se.</p>
 </div>
 
-The problem with selector nesting is that it ultimately makes code more difficult to read. One has to mentally compute the resulting selector out of the indentation levels; it is not always quite obvious what the CSS will end up being.
+Il problema dei selettori annidati è che alla fine rendono il codice più difficile da leggere. Lo sviluppatore deve calcolare mentalmente il selettore risultante sulla base del livello di indentazione; non è sempre evidente come sarà il CSS finale.
 
-This statement becomes truer as selectors get longer and references to the current selector (`&`) more frequent. At some point, the risk of losing track and not being able to understand what's going on anymore is so high that it is not worth it.
+Questa affermazione è ancora più veritiera nel momento in cui i selettori diventano più lunghi e il ricorso al riferimento del selettore corrente (`&`) più frequente. Ad un certo punto, il rischio di perder traccia e non capire più cosa sta succedendo è così elevato da non valerne la pena.
 
-To prevent such a situation, we **avoid selector nesting as much as possible**. However, there are obviously a few exceptions to this rule.
+Per prevenire situazioni simili, è bene **evitare l'annidamento dei selettori il più possibile**. Tuttavia, ci sono ovviamente alcune eccezioni a questa regola.
 
-### Exceptions
+### Eccezioni
 
-For starters, it is allowed and even recommended to nest pseudo-classes and pseudo-elements within the initial selector.
+Per cominciare, è permesso e anzi consigliabile annidare pseudo-classi e pseudo-elementi all'interno dei selettori iniziali.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1192,9 +1192,9 @@ For starters, it is allowed and even recommended to nest pseudo-classes and pseu
   </div>
 </div>
 
-Using selector nesting for pseudo-classes and pseudo-elements not only makes sense (because it deals with closely related selectors), it also helps keep everything about a component at the same place.
+Usare l'annidamento dei selettori per le pseudo-classi e gli pseudo-elementi non solo ha senso (perchè gestisce selettori fortemente relazionati), aiuta a mantenere le regole di un componente tutte nello stesso posto.
 
-Also, when using component-agnostic state classes such as `.is-active`, it is perfectly fine to nest it under the component's selector to keep things tidy.
+Inoltre, utilizzando classi agnostiche ai componenti come `.is-active`, è assolutamente giusto annidarle sotto il selettore del componente per mantenere il tutto ordinato.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1219,7 +1219,7 @@ Also, when using component-agnostic state classes such as `.is-active`, it is pe
   </div>
 </div>
 
-Last but not least, when styling an element because it happens to be contained within another specific element, it is also fine to use nesting to keep everything about the component at the same place.
+Ultimo ma non per importanza, quando si stilizza un elemento sulla base del fatto che sia contenuto all'interno di un altro specifico elemento, è molto comodo usare l'annidamento per mantenere tutti gli stili relativi al singolo componente tutti nello stesso punto.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1244,12 +1244,12 @@ Last but not least, when styling an element because it happens to be contained w
   </div>
 </div>
 
-When working with unexperienced developers, a selector such as `.no-opacity &` might look a little weird. To prevent any confusion, you can build a very short mixin that transform this odd syntax into an explicit API.
+Lavorando con sviluppatori poco esperti, un selettore come `.no-opacity &` può sembrare un po strano. Per evitare confusione, puoi costruire un piccolo mixin che trasforma questa strana sintassi in una API esplicita.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-/// Helper mixin to provide simple API to selector nesting
+/// Mixin per ottenere una semplice API per i selettori annidati
 /// @param {String} $selector - Selector
 @mixin when-inside($selector) {
   #{$selector} & {
@@ -1260,7 +1260,7 @@ When working with unexperienced developers, a selector such as `.no-opacity &` m
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-/// Helper mixin to provide simple API to selector nesting
+/// Mixin per ottenere una semplice API per i selettori annidati
 /// @param {String} $selector - Selector
 =when-inside($selector) {
   #{$selector} &
@@ -1270,7 +1270,7 @@ When working with unexperienced developers, a selector such as `.no-opacity &` m
   </div>
 </div>
 
-Rewriting our previous example, it would look like this:
+Riscrivendo l'esempio precedente, il risultato sarebbe questo:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -1295,14 +1295,14 @@ Rewriting our previous example, it would look like this:
   </div>
 </div>
 
-As with everything, the specifics are somewhat irrelevant, consistency is key. If you feel fully confident with selector nesting, then use selector nesting. Just make sure your whole team is okay with that.
+Come per ogni cosa, le specifiche sono al quanto irrilevanti, la consistenza è l'aspetto importante. Se ti senti pienamente confidente con l'annidamento dei selettori, allora utilizzalo. Assicurati solo che tutto il team sia concorde.
 
 
 
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [Beware of Selector Nesting](http://www.sitepoint.com/beware-selector-nesting-sass/)
 * [The Inception Rule](http://thesassway.com/beginner/the-inception-rule)
