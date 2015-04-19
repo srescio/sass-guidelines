@@ -51,6 +51,27 @@ Non ci occuperemo della questione relativa all'organizzazione dei file in questa
 
 ## Stringhe
 
+Incredibile ma vero, le stringhe ricoprono un ruolo centrale sia nell'ecosistema del CSS che in Sass. La maggior parte dei valori sono o grandezze o stringhe (solitamente non virgolettate), quindi è abbastanza cruciale aderire a delle linee guida quando si usano le stringhe in Saas.
+
+### Encoding
+
+Per evitare potenziali problemi con la codifica dei caratteri, è fotemente consigliabile forzare la codifica [UTF-8](http://en.wikipedia.org/wiki/UTF-8) nel [foglio di stile principale](#main-file) usando la direttiva `@charset`. Assicurati che sia la prima regola del foglio di stile e che non ci sia alcun carattere prima di essa.
+
+<div class="code-block">
+  <div class="code-block__wrapper" data-syntax="scss">
+{% highlight scss %}
+@charset 'utf-8';
+{% endhighlight %}
+  </div>
+  <div class="code-block__wrapper" data-syntax="sass">
+{% highlight sass %}
+@charset 'utf-8'
+{% endhighlight %}
+  </div>
+</div>
+
+### Virgolette
+
 Il CSS non richiede che le stringhe siano virgolettate, neanche quando contengono degli spazi. Prendiamo i nomi delle font-family oer esempio: non importa se li racchiudi o meno tra virgolette per il parser CSS.
 
 Per questo motivo, Sass *a sua volta* non richiede che le stringhe siano virgolettate. Ancora meglio (e *fortunatamente*, se mi concedi), una stringa virgolettata è strettamente equivalente alla sua controparte senza virgolette (e.g. `'abc'` è strettamente equivalente a `abc`).
@@ -66,34 +87,86 @@ Detto questo, i linguaggi che non richiedono che le stringhe siano virgolettate 
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
 // Giusto
-$font-stack: 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif;
+$direction: 'left';
 
 // Sbagliato
-$font-stack: "Helvetica Neue Light", "Helvetica", "Arial", sans-serif;
-
-// Sbagliato
-$font-stack: Helvetica Neue Light, Helvetica, Arial, sans-serif;
+$direction: left;
 {% endhighlight %}
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
 // Giusto
-$font-stack: 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif
+$direction: 'left'
 
 // Sbagliato
-$font-stack: "Helvetica Neue Light", "Helvetica", "Arial", sans-serif
-
-// Sbagliato
-$font-stack: Helvetica Neue Light, Helvetica, Arial, sans-serif
+$direction: left
 {% endhighlight %}
   </div>
 </div>
 
-<div class="note">
-  <p>Nell'esempio precedente, <code>sans-serif</code> non è virgolettato perchè è un valore specifico del CSS che deve rimanere tale.</p>
+### Stringhe come valori CSS
+
+Specifici valori CSS come `initial` o `sans-serif` non necessitano di essere virgolettati. Invece la dichiarazione `font-family: 'sans-serif'` fallirà silentemente perchè il CSS si aspetta un identificatore, non una stringa virgolettata. Per questo motivo, non si virgolettano questi valori.
+
+<div class="code-block">
+  <div class="code-block__wrapper" data-syntax="scss">
+{% highlight scss %}
+// Giusto
+$font-type: sans-serif;
+
+// Sbagliato
+$font-type: 'sans-serif';
+
+// Penso okay
+$font-type: unquote('sans-serif');
+{% endhighlight %}
+  </div>
+  <div class="code-block__wrapper" data-syntax="sass">
+{% highlight sass %}
+// Giusto
+$font-type: sans-serif
+
+// Sbagliato
+$font-type: 'sans-serif'
+
+// Penso okay
+$font-type: unquote('sans-serif')
+{% endhighlight %}
+  </div>
 </div>
 
-anche le URL dovrebbero essere virgolettate, per le stesse ragioni di cui sopra:
+Quindi possiamo fare una distinzione tra le stringhe intese per essere usate come valori CSS (identificatori CSS) come l'esempio precedente, e le stringhe come tipo di dato in Saas, ad esempio le chiavi delle mappe.
+
+Non virgolettiamo le prime, ma racchiudiamo le seconde in virgolette singole.
+
+### Stringhe contenenti virgolette
+
+Se una stringa contiene una o più virgolette singole, si può considerare di racchiudere la stringa tra virgolette doppie (`"`), in modo da evitare di eseguire l'escape di troppi caratteri dentro la stringa.
+
+<div class="code-block">
+  <div class="code-block__wrapper" data-syntax="scss">
+{% highlight scss %}
+// Okay
+@warn 'You can\'t do that.';
+
+// Okay
+@warn "You can't do that.";
+{% endhighlight %}
+  </div>
+  <div class="code-block__wrapper" data-syntax="sass">
+{% highlight sass %}
+// Okay
+@warn 'You can\'t do that.'
+
+// Okay
+@warn "You can't do that."
+{% endhighlight %}
+  </div>
+</div>
+
+### Le URL
+
+Le URL dovrebbero essere virgolettate, per le stesse ragioni di cui sopra:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -202,7 +275,7 @@ $length: 0em
   </div>
 </div>
 
-L'errore più comune che mi viene in mente riguardo ai numeri in Sass, è pensare che le unità siano solo delle stringhe che possono essere tranquillamente affisse ad un numero. Anche se sembra così, non è così che funzionano le unità. Pensa alle unità come dei simboli algebrici. Per esempio, nel mondo reale, moltiplicare 5 pollici per 5 pollici restituisce 25 pollici quadrati. La stessa logica si applica in Sass. 
+L'errore più comune che mi viene in mente riguardo ai numeri in Sass, è pensare che le unità siano solo delle stringhe che possono essere tranquillamente affisse ad un numero. Anche se sembra vero, non è così che funzionano le unità. Pensa alle unità come dei simboli algebrici. Per esempio, nel mondo reale, moltiplicare 5 pollici per 5 pollici restituisce 25 pollici quadrati. La stessa logica si applica in Sass. 
 
 Per aggiungere una unità ad un numero, devi moliplicare il numero per *1 unità*.
 
@@ -289,7 +362,7 @@ $value: str-slice($length + unquote(''), 1, 2)
   </div>
 </div>
 
-Appendere una unità come stringa ad un numero risulta in una stringa, impedendo ulteriori operazioni sul valore. Dividire la parte numerica di un numero con una unità dà nuovamente come risultato una stringa. Non è in genere quello che si vuole.
+Appendere una unità come stringa ad un numero risulta in una stringa, impedendo ulteriori operazioni sul valore. Separando la parte numerica di un numero con una unità dà nuovamente come risultato una stringa. Non è in genere quello che si vuole.
 
 
 
@@ -496,7 +569,12 @@ Il fatto è che queste funzioni spesso non danno il risultato che ci si aspetta.
 Il benefico di usare `mix` invece di una delle due funzioni menzionate sopra è che il colore tenderà gradualmente al bianco o al nero in base a quanto diminuisce la proporzione con il colore, mentre `darken` e `lighten` vanno rapidamente a sovrascrivere un colore con il bianco o il nero.
 
 <figure role="group">
-  <img src="/assets/images/lighten-darken-mix.png" alt="Illustrazione della differenza tra le funzioni Sass lighten/darken e mix" />
+  <img alt="Illustrazione della differenza tra le funzioni Sass lighten/darken e mix"
+     sizes="100vw"
+     srcset="/assets/images/lighten-darken-mix_small.png  540w,
+             /assets/images/lighten-darken-mix_medium.png 900w,
+             /assets/images/lighten-darken-mix_large.png 1200w,
+             /assets/images/lighten-darken-mix_huge.png  1590w" />
   <figcaption>Illustrazione della differenza tra <code>lighten</code>/<code>darken</code> e <code>mix</code> di <a href="http://codepen.io/KatieK2/pen/tejhz/" target="_blank">KatieK</a></figcaption>
 </figure>
 
@@ -507,8 +585,8 @@ Se non vuoi scrivere la funzione `mix` ogni volta, puoi creare due funzioni `tin
 {% highlight scss %}
 /// Schiarisce leggermente un colore
 /// @access public
-/// @param {Color} $color - color to tint
-/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @param {Color} $color - colore da schiarire
+/// @param {Number} $percentage - percentuale di `$color` nel colore finale
 /// @return {Color}
 @function tint($color, $percentage) {
   @return mix($color, white, $percentage);
@@ -516,8 +594,8 @@ Se non vuoi scrivere la funzione `mix` ogni volta, puoi creare due funzioni `tin
 
 /// Scurisce leggermente un colore
 /// @access public
-/// @param {Color} $color - color to shade
-/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @param {Color} $color - colore da scurire
+/// @param {Number} $percentage - percentuale di `$color` nel colore finale
 /// @return {Color}
 @function shade($color, $percentage) {
   @return mix($color, black, $percentage);
@@ -528,16 +606,16 @@ Se non vuoi scrivere la funzione `mix` ogni volta, puoi creare due funzioni `tin
 {% highlight sass %}
 /// Schiarisce leggermente un colore
 /// @access public
-/// @param {Color} $color - color to tint
-/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @param {Color} $color - colore da schiarire
+/// @param {Number} $percentage - percentuale di `$color` nel colore finale
 /// @return {Color}
 @function tint($color, $percentage)
   @return mix($color, white, $percentage)
 
 /// Scurisce leggermente un colore
 /// @access public
-/// @param {Color} $color - color to shade
-/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @param {Color} $color - colore da scurire
+/// @param {Number} $percentage - percentuale di `$color` nel colore finale
 /// @return {Color}
 @function shade($color, $percentage)
   @return mix($color, black, $percentage)
@@ -570,10 +648,10 @@ Le liste sono l'equivalente di Sass degli array. Una lista è una struttura di d
 
 Le liste dovrebbero rispettare le seguenti linee guida:
 
-* a meno che non siano troppo lunghe per rientrare in una riga di 80 caratteri, mostrarle sempre su una riga singola;
-* a meno che non sia utilizzata così com'è per usarla nel CSS, separe sempre gli elementi con una virgola;
-* a meno che non sia vuota o annidata in un altra lista, non usare mai le parentesi;
-* non aggiungere mai una virgola finale.
+* su singola riga o righe multiple;
+* necessariamente su righe multiple se troppo lunghe per rientrare in una riga di 80 caratteri;
+* sempre racchiuse tra parentesi;
+* virgola finale se su righe multiple, oppure no se su riga singola.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -602,7 +680,7 @@ $font-stack: ('Helvetica', 'Arial', sans-serif,);
 // Giusto
 $font-stack: 'Helvetica', 'Arial', sans-serif
 
-// Sbagliato (dato che non è supportato)
+// Sbagliato (non è supportato)
 $font-stack:
   'Helvetica',
   'Arial',
@@ -651,6 +729,7 @@ $shadows: $shadows, $shadow
 
 ### Letture Aggiuntive
 
+* [Understanding Sass lists](http://hugogiraudel.com/2013/07/15/understanding-sass-lists/)
 * [SassyLists](http://sassylists.com)
 
 
@@ -796,6 +875,7 @@ Se vuoi sapere la profondità di una mappa, aggiungi la seguente funzione. Il mi
 
 * [Using Sass Maps](http://www.sitepoint.com/using-sass-maps/)
 * [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/)
+* [Extra Map functions in Sass](http://www.sitepoint.com/extra-map-functions-sass/)
 * [Real Sass, Real Maps](http://blog.grayghostvisuals.com/sass/real-sass-real-maps/)
 * [Sass Maps are Awesome](http://viget.com/extend/sass-maps-are-awesome)
 * [Sass list-maps](https://github.com/lunelson/sass-list-maps)
@@ -812,7 +892,7 @@ Se vuoi sapere la profondità di una mappa, aggiungi la seguente funzione. Il mi
 
 A questo punto andiamo a rivisitare nozioni note un po a tutti, comunque questo è il modo in cui si dovrebbe scrivere un insieme di regole CSS (almeno in base alla maggior parte delle guidelines, incluso [CSS Guidelines](http://cssguidelin.es/#anatomy-of-a-ruleset)):
 
-* selettori relazionati su una stessa riga, selettori non relazionati a capo;
+* selettori relazionati su una stessa riga; selettori non relazionati a capo;
 * la parentesi graffa aperta (`{`) separata dall'ultimo selettore da un singolo spazio;
 * ogni dichiarazione su una nuova riga;
 * uno spazio dopo i due punti (`:`);
@@ -860,7 +940,7 @@ Illustrazione:
   </div>
 </div>
 
-In aggiunta alle guidelines sul CSS, bisogna fare attenzione a:
+In aggiunta alle guidelines sul CSS di cui sopra, bisogna fare attenzione a:
 
 * variabili locali dichiarate prima di ogni dichiarazione, poi separate dalle dichiarazioni da una nuova riga;
 * chiamate a mixin senza `@content` prima di qualunque dichiarazione;
@@ -1146,7 +1226,7 @@ Allo stesso modo, a partire da Sass 3.3 è possibile usare il riferimento del se
   </div>
 </div>
 
-Questo metodo è spesso usato insieme a [BEM naming conventions](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) per generare selettori `.block__element` e `.block--modifier` basati sul selettore originale  (i.e. `.block` in questo caso).
+Questo metodo è spesso usato insieme alla [convenzione di nomenclatura BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) per generare selettori `.block__element` e `.block--modifier` basati sul selettore originale  (i.e. `.block` in questo caso).
 
 <div class="note">
   <p>Può sembrare un aneddoto, ma generare nuovi selettori tramite il riferimento del selettore corrente (<code>&</code>) rende quei selettori non ricercabili all'interno della codebase dato che non esistono di per se.</p>

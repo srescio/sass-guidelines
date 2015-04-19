@@ -27,7 +27,7 @@ Detto questo, ci sono molti modi per usare queste nuove funzionalità. Alcuni bu
 
 [Il primo committ su Sass](https://github.com/hcatlin/sass/commit/fa5048ba405619273e474a50400c7243fbff54fe) risale alla fine del 2006, più di 8 anni fa. Inutile dire che ha fatto molta strada da allora. Inizialmente sviluppato in Ruby, numerosi porting sono apparsi un po ovunque. Quello di maggior successo, [LibSass](https://github.com/sass/libsass) (scritto in C) è ora molto vicino ad essere del tutto compatibile con la versione Ruby.
 
-Nel 2014, [i teams di Ruby Sass e LibSass hanno deciso di attendere l'allineamento delle due versioni prima di svuluppare nuove funzionalità](https://github.com/sass/libsass/wiki/The-LibSass-Compatibility-Plan). Da allora, LibSass rilascia attivamente delle versioni funzionalmente paritative a quelle del suo fratello maggiore. Le ultime inconsistenze rimaste sono raccolte e listate da me nel progetto [Sass-Compatibility](http://sass-compatibility.github.io). Se sei a conoscenza di una incompatibilità non listata nel progetto, puoi aprire un issue per aggiungerla.
+Nel 2014, [i teams di Ruby Sass e LibSass hanno deciso di attendere l'allineamento delle due versioni prima di svuluppare nuove funzionalità](https://github.com/sass/libsass/wiki/The-LibSass-Compatibility-Plan). Da allora, LibSass rilascia attivamente delle versioni funzionalmente paritative a quelle del suo fratello maggiore. Le ultime inconsistenze rimaste sono raccolte e listate da me nel progetto [Sass-Compatibility](http://sass-compatibility.github.io). Se sei a conoscenza di una incompatibilità non elencata nel progetto, puoi aprire un issue per aggiungerla.
 
 Torniamo alla scelta del compilatore. In realtà, tutto dipende dal tuo progetto. Se è un progetto Ruby on Rails, faresti meglio ad usare Ruby Sass, che è perfettamente idoneo per un caso come questo. Inoltre, sappi che Ruby Sass sarà sempre l'implementazione di riferimento che guiderà le funzionalità di LibSass.
 
@@ -38,6 +38,7 @@ Per i progetti non-Ruby che necessitano di una integrazione di workflow, LibSass
 ### Letture Aggiuntive
 
 * [LibSass](https://github.com/sass/libsass)
+* [Getting to know LibSass](http://webdesign.tutsplus.com/articles/getting-to-know-libsass--cms-23114)
 * [Sass-Compatibility](http://sass-compatibility.github.io)
 * [Switching from Ruby Sass to LibSass](http://www.sitepoint.com/switching-ruby-sass-libsass/)
 
@@ -52,11 +53,11 @@ C'è un sacco di confusione riguardo il significato del nome *Sass*, e ci sono b
 
 Il motivo è che Sass inizialmente descriveva una sintassi la cui caratteristica peculiare era la sensibilità all'indentazione. In breve tempo, i manutentori di Sass decisero di colmare il divario tra Sass e CSS mettendo a disposizione una sintassi simile al CSS chiamata *SCSS* che sta per *Sassy CSS*. Il motto è: se è CSS valido, è SCSS valido.
 
-Da allora, Sass (il preprocessore) mette a disposizione due sintassi: Sass (non tutto maiuscolo, [per favore](http://sassnotsass.com)), conosciuto anche come *la sintassi predefinita*, e SCSS. La decisione su quale delle due utilizzare è soggettiva dato che entrambe sono strettamente equivalenti in termini di funzionalità. È solo una questione di estetica.
+Da allora, Sass (il preprocessore) mette a disposizione due sintassi: Sass (non tutto maiuscolo, [per favore](http://sassnotsass.com)), conosciuta anche come *la sintassi predefinita*, e SCSS. La decisione su quale delle due utilizzare è soggettiva dato che entrambe sono strettamente equivalenti in termini di funzionalità. È solo una questione di estetica.
 
 La sintassi sensibile agli spazi di Sass si basa sull'indentazione per fare a meno delle parentesi, dei punti e virgola ed altri simboli di punteggiatura, ottenendo una sintassi più breve e minimale. SCSS invece è più semplice da apprendere dato che aggiunge funzionalità sul normale CSS.
 
-Personalmente preferisco SCSS rispetto a Sass perchè è più vicina al CSS e più semplice per molti sviluppatori. Per questo motivo, userò SCSS invece che Sass nel corso di queste linee guida.
+Personalmente preferisco SCSS rispetto a Sass perchè è più vicina al CSS e più semplice per molti sviluppatori. Per questo motivo, userò SCSS invece che Sass nel corso di questa guida.
 
 
 

@@ -12,7 +12,7 @@ Infine prima di cominciare: se ti è piaciuto questo documento, o se è utile pe
     {% include icons/dollar.html %}
     Supporta Sass Guidelines
   </a>
-  {% capture tweet %}{{ site.title }}, {{ site.description }} by @{{ site.twitter_username }} –{% endcapture %}
+  {% capture tweet %}{{ site.title }}, {{ site.description }} di @{{ site.twitter_username }} –{% endcapture %}
   <a href="https://twitter.com/share?text={{ tweet | cgi_escape }}&url={{ site.url }}" target="_blank" class="button">
     {% include icons/twitter.html %}
     Spargi il verbo
