@@ -66,7 +66,7 @@ Also be sure to respect those guidelines to preserve readability:
 
 ## For
 
-The `@for` loop might be useful when combined with CSS' `:nth-*` pseudo-classes. Except for these scenarios, prefer an `@each` loop if you *have to* iterate over something.
+The `@for` loop might be useful when combined with CSS’ `:nth-*` pseudo-classes. Except for these scenarios, prefer an `@each` loop if you *have to* iterate over something.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -91,7 +91,7 @@ Always use `$i` as a variable name to stick to the usual convention and unless y
 
 Also be sure to respect those guidelines to preserve readability:
 
-* Always an empty new line before `@each`;
+* Always an empty new line before `@for`;
 * Always an empty new line after the closing brace (`}`) unless the next line is a closing brace (`}`).
 
 

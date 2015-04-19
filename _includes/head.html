@@ -8,15 +8,29 @@
   <meta name="description" content="{{ site.description }}">
   <meta name="keywords" content="{{ site.keywords }}">
 
-  <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+  <style>
+  {% include critical.css %}{% for language in site.data.translations %}{% if language[1].note != "" %}:lang({{ language[0] }}) .note>p:first-child::before{content:"{{ language[1].note }} — "}{% endif %}{% endfor %}
+  </style>
+
+  <script>
+  {% include utilities.js %}
+  </script>
+
+  <script>
+  var ua = window.navigator.userAgent,
+      ttf = ua.indexOf('Android 4.') > -1 && ua.indexOf('like Gecko') > -1 && ua.indexOf('Chrome') === -1;
+
+  loadCSS('/css/full.css');
+  loadCSS('/css/fonts/data-' + (supportsWoff2 ? 'woff2' : (ttf ? 'ttf' : 'woff')) + '.css');
+  </script>
+
+  <noscript>
+    <link rel="stylesheet" href="{{ '/css/full.css' | prepend: site.baseurl }}">
+  </noscript>
+
+  <script>document.createElement('picture')</script>
+
+  <script src="{{ '/assets/js/picturefill.min.js' | prepend: site.baseurl }}" async></script>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-  <!-- Thanks to Sass-lang.com for the icon -->
-  <link href="http://sass-lang.com/assets/img/ico/favicon-0ccd2d9d.png" rel="shortcut icon">
-
-  <style>
-  {% for language in site.data.translations %}{% if language[1].note != "" %}:lang({{ language[0] }}) .note > p:first-child::before { content: "{{ language[1].note }} — "; }
-  {% endif %}{% endfor %}
-  </style>
 </head>

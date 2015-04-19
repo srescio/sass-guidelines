@@ -37,6 +37,7 @@ blockquote {
  * Headings
  */
 h1, h2, h3 {
+  @include prefix(hyphens, auto, webkit moz);
   text-transform: capitalize;
   position: relative;
 
@@ -61,9 +62,10 @@ h3 {
   text-transform: uppercase;
 }
 
-/**
- * Images
- */
-img {
-  max-width: 100%;
+// Russian do not capitalize every word in a header
+// See https://github.com/HugoGiraudel/sass-guidelines/issues/163
+:lang(ru) {
+  h1, h2, h3 {
+    text-transform: initial;
+  }
 }

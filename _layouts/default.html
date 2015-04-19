@@ -10,13 +10,11 @@
 
     <h2 class="baseline">{{ site.data.translations[page.language].baseline.content }}</h2>
 
-    {% if page.language != 'en' %}
-      {% include translation-warning.html %}
-    {% endif %}
-
-    {% include aside.html %}
+    {% include translation-warning.html %}
 
     {{ content }}
+
+    {% include aside.html %}
 
     <a href="#top" class="button-ui  button-ui--back">
       {% include icons/up.html %}

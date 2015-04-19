@@ -10,10 +10,14 @@ figure {
 figure img {
   display: block;
   height: auto;
+  max-width: 100%;
+  max-height: 80vh;
 }
 
 figcaption {
   text-align: center;
   font-size: .8em;
   font-style: italic;
+
+  @include beautify-links($figure-background);
 }

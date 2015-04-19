@@ -38,7 +38,6 @@
 
   App.prototype.initialize = function () {
     this.addHeadingAnchors();
-    this.loadCustomFonts();
     this.fixSkipLinks();
     this.bindUI();
   };
@@ -56,8 +55,10 @@
       });
     });
 
-    document.getElementById('aside-toggle').addEventListener('click', function (event) {
-      toggleClass(document.body, 'open');
+    Array.prototype.slice.call(document.querySelectorAll('[data-toggle="aside"]')).forEach(function (element) {
+      element.addEventListener('click', function (event) {
+        toggleClass(document.body, 'open');
+      });
     });
 
     document.getElementById('language-picker').addEventListener('change', function (event) {
@@ -81,21 +82,6 @@
     }
   };
 
-  App.prototype.loadCustomFonts = function () {
-      WebFontConfig = {
-        google: { families: ['Droid Sans:400,700', 'Source Code Pro'] }
-      };
-
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                  '://ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js';
-        wf.async = 1;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();
-  };
-
   App.prototype.fixSkipLinks = function () {
     window.addEventListener("hashchange", function(event) {
       var element = document.getElementById(location.hash.substring(1));
@@ -112,3 +98,7 @@
   global.App = App;
 
 }(window));
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  var app = new App();
+});

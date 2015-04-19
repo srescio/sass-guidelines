@@ -35,10 +35,10 @@ $breakpoints: (
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
 // Dobrze
-$breakpoints: ("medium": (min-width: 800px), "large": (min-width: 1000px), "huge": (min-width: 1200px))
+$breakpoints: ('medium': (min-width: 800px), 'large': (min-width: 1000px), 'huge': (min-width: 1200px))
 
 // Źle
-$breakpoints: ("tablet": (min-width: 800px), "computer": (min-width: 1000px), "tv": (min-width: 1200px))
+$breakpoints: ('tablet': (min-width: 800px), 'computer': (min-width: 1000px), 'tv': (min-width: 1200px))
 {% endhighlight %}
   </div>
 </div>
@@ -57,7 +57,7 @@ $breakpoints: (
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-$breakpoints: ("seed": (min-width: 800px), "sprout": (min-width: 1000px), "plant": (min-width: 1200px))
+$breakpoints: ('seed': (min-width: 800px), 'sprout': (min-width: 1000px), 'plant': (min-width: 1200px))
 {% endhighlight %}
   </div>
 </div>
@@ -90,9 +90,7 @@ W momencie gdy Twoje breakpointy są już nazwane, potrzebujesz sposobu by ich u
     @media #{inspect(map-get($breakpoints, $breakpoint))} {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @error 'Nie znaleziono wartości dla `#{$breakpoint}`. '
          + 'Proszę się upewnić, że jest ona zdefiniowana w mapie `$breakpoints`.';
   }
@@ -165,6 +163,7 @@ Nie tak dawno temu, w społeczności pojawiła się dosyć burzliwa dyskusja na 
 
 Co prowadzi do następującego CSSu:
 
+<div>
 {% highlight css %}
 .foo {
   color: red;
@@ -176,6 +175,7 @@ Co prowadzi do następującego CSSu:
   }
 }
 {% endhighlight %}
+</div>
 
 Możesz usłyszeć opinie, że taka konwencja prowadzi do duplikowania media queries w wynikowym CSSie. Jest to niewątpliwie prawdą. Należy jednak zaznaczyć, że [przeprowadzono w tej kwestii testy](http://sasscast.tumblr.com/post/38673939456/sass-and-media-queries), które wykazały że nie ma to żadnego znaczenia, w momencie gdy Gzip (lub inna metoda kompresji) został użyty na serwerze:
 

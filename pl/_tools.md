@@ -16,7 +16,7 @@ Osobiście nie korzystam już z Compassa. Głównym tego powodem jest fakt, że 
 
 Rzecz w tym, że tak naprawdę używa się bardzo małego procenta całej funkcjonalności tego frameworka. Compass jest olbrzymi. Mixiny dla zapewnienia kompatybilności pomiędzy przeglądarkami to tylko wierzchołek góry lodowej. Funkcje matematyczne, funkcje pomagające z obrazkami, spriting... Compass dodaje bardzo dużo funkcjonalności.
 
-Niestety, można powiedzieć że to są tylko słodycze, a naprawdę brak jest jakiejś *zabójczej* funkcjonalności. Wyjątkiem może być funkcja budowania sprite'ów, która jest *naprawdę świetna*, lecz [Grunticon](https://github.com/filamentgroup/grunticon) i [Grumpicon](http://grumpicon.com/) robią to równie dobrze i mają ponadto tą zaletę, że można je dołączyć do zautomatyzowanego procesu budowania (jeśli z takiego korzystamy).
+Niestety, można powiedzieć że to są tylko słodycze, a naprawdę brak jest jakiejś *zabójczej* funkcjonalności. Wyjątkiem może być funkcja budowania sprite’ów, która jest *naprawdę świetna*, lecz [Grunticon](https://github.com/filamentgroup/grunticon) i [Grumpicon](http://grumpicon.com/) robią to równie dobrze i mają ponadto tą zaletę, że można je dołączyć do zautomatyzowanego procesu budowania (jeśli z takiego korzystamy).
 
 W każdym bądź razie, w żadnym wypadku nie zabraniam używania Compassu, chociaż też go nie polecam, zwłaszcza że nie jest on kompatybilny z LibSass (nawet jeśli pewne zamiary zostały w tym kierunku poczynione). Jeśli jest Ci on pomocny, w porządku, ale nie wydaje mi się żeby jego zalety przewyższały jego wady.
 
@@ -61,7 +61,7 @@ Możesz też spróbować czegoś bardziej przyziemnego, choćby [csswizardry-gri
 * [Build Web Layouts Easily with Susy](http://css-tricks.com/build-web-layouts-easily-susy/)
 * [A Complete Tutorial to Susy 2](http://www.zell-weekeat.com/susy2-tutorial/)
 * [Sass Grids: From Neat to Susy](http://www.sitepoint.com/sass-grids-neat-susy/)
-* [Bootstrap's Grid System vs Susy: a Comparison](http://www.sitepoint.com/bootstraps-grid-system-vs-susy-comparison/)
+* [Bootstrap’s Grid System vs Susy: a Comparison](http://www.sitepoint.com/bootstraps-grid-system-vs-susy-comparison/)
 * [How to Use Susy: Superpowered Sass Grids](http://webdesign.tutsplus.com/tutorials/how-to-use-susy-superpowered-sass-grids--cms-22744)
 * [A Creative Grid System with Sass and calc()](http://www.sitepoint.com/creative-grid-system-sass-calc/)
 
@@ -76,176 +76,9 @@ Prześwietlanie (linting) kodu jest zagadnieniem o bardzo dużej wadze. Zazwycza
 
 [SCSS-lint](https://github.com/causes/scss-lint) jest narzędziem, które pomoże Ci w utrzymaniu Twoich plików SCSS w czystości i zapewni ich czytelność. Jest ono w pełni konfigurowalne i jednocześnie bardzo proste w integracji z Twoimi innymi narzędziami.
 
-Na całe szczęście, rekomendacje SCSS-linta są w wysokim stopniu zbliżone do tych opisanych w tym przewodniku. Aby skonfigurować SCSS-lint w pełnej zgodności z Sass Guidelines, zalecam następujące jego ustawienia (SCSS-Lint v0.32.0):
+Na całe szczęście, rekomendacje SCSS-linta są w wysokim stopniu zbliżone do tych opisanych w tym przewodniku. Aby skonfigurować SCSS-lint w pełnej zgodności z Sass Guidelines, zalecam następujące jego ustawienia:
 
-{% highlight yaml %}
-linters:
-
-  BangFormat:
-    enabled: true
-    space_before_bang: true
-    space_after_bang: false
-
-  BorderZero:
-    enabled: true
-
-  ColorKeyword:
-    enabled: false
-
-  Comment:
-    enabled: false
-
-  DebugStatement:
-    enabled: true
-
-  DeclarationOrder:
-    enabled: true
-
-  DuplicateProperty:
-    enabled: false
-
-  ElsePlacement:
-    enabled: true
-    style: same_line
-
-  EmptyLineBetweenBlocks:
-    enabled: true
-    ignore_single_line_blocks: false
-
-  EmptyRule:
-    enabled: true
-
-  FinalNewline:
-    enabled: true
-    present: true
-
-  HexLength:
-    enabled: true
-    style: short
-
-  HexNotation:
-    enabled: true
-    style: lowercase
-
-  HexValidation:
-    enabled: true
-
-  IdSelector:
-    enabled: true
-
-  ImportPath:
-    enabled: true
-    leading_underscore: false
-    filename_extension: false
-
-  Indentation:
-    enabled: true
-    character: space
-    width: 2
-
-  LeadingZero:
-    enabled: true
-    style: include_zero
-
-  MergeableSelector:
-    enabled: false
-    force_nesting: false
-
-  NameFormat:
-    enabled: true
-    convention: hyphenated_lowercase
-    allow_leading_underscore: true
-
-  NestingDepth:
-    enabled: true
-    max_depth: 3
-
-  PlaceholderInExtend:
-    enabled: true
-
-  PropertySortOrder:
-    enabled: false
-    ignore_unspecified: false
-
-  PropertySpelling:
-    enabled: true
-    extra_properties: []
-
-  QualifyingElement:
-    enabled: true
-    allow_element_with_attribute: false
-    allow_element_with_class: false
-    allow_element_with_id: false
-
-  SelectorDepth:
-    enabled: true
-    max_depth: 3
-
-  SelectorFormat:
-    enabled: true
-    convention: hyphenated_lowercase
-    class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'
-
-  Shorthand:
-    enabled: true
-
-  SingleLinePerProperty:
-    enabled: true
-    allow_single_line_rule_sets: false
-
-  SingleLinePerSelector:
-    enabled: true
-
-  SpaceAfterComma:
-    enabled: true
-
-  SpaceAfterPropertyColon:
-    enabled: true
-    style: one_space
-
-  SpaceAfterPropertyName:
-    enabled: true
-
-  SpaceBeforeBrace:
-    enabled: true
-    style: space
-    allow_single_line_padding: true
-
-  SpaceBetweenParens:
-    enabled: true
-    spaces: 0
-
-  StringQuotes:
-    enabled: true
-    style: single_quotes
-
-  TrailingSemicolon:
-    enabled: true
-
-  TrailingZero:
-    enabled: true
-
-  UnnecessaryMantissa:
-    enabled: true
-
-  UnnecessaryParentReference:
-    enabled: true
-
-  UrlFormat:
-    enabled: false
-
-  UrlQuotes:
-    enabled: true
-
-  VendorPrefixes:
-    enabled: true
-    identifier_list: base
-    include: []
-    exclude: []
-
-  ZeroUnit:
-    enabled: true
-{% endhighlight %}
+{% include scss-lint-configuration.html %}
 
 <div class="note">
   <p>Jeśli chcesz dołączyć SCSS-lint do Twojego obecnego procesu budowania w Gruncie, śpieszę z dobrą wiadomością - dostępny jest plugin do Grunta o nazwie <a href="https://github.com/ahmednuaman/grunt-scss-lint">grunt-scss-lint</a>.</p>

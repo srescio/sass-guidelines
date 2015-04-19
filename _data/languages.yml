@@ -1,3 +1,14 @@
+zh:
+  version: 1.0.0
+  label: Chinese
+  prefix: /zh/
+  available: true
+  translators:
+    - name: 大漠
+      link: http://www.w3cplus.com
+    - name: Sean Sun
+      link: https://github.com/pinggod
+
 cz:
   version: 1.0.0
   label: Czech
@@ -6,15 +17,6 @@ cz:
   translators:
     - name: Pavel Antolík
       link: https://github.com/pavelantolik
-
-da:
-  version: 1.0.0
-  label: Danish
-  prefix: /da/
-  available: false
-  translators:
-    - name: Patrick Redzdaz
-      link: https://github.com/PatrickKDK
 
 nl:
   version: 1.0.0
@@ -26,20 +28,20 @@ nl:
       link: https://github.com/ttomdewit
 
 en:
-  version: 1.0.0
+  version: 1.1.0
   label: English
   prefix: /
   available: true
   translators: []
 
 fr:
-  version: 1.0.0
+  version: 1.1.0
   label: French
   prefix: /fr/
-  available: false
+  available: true
   translators:
-    - name: Pierre Choffe
-      link: https://github.com/pierrechoffe
+    - name: Pierre Choffé
+      link: http://la-cascade.ghost.io
 
 de:
   version: 1.0.0
@@ -72,6 +74,15 @@ it:
     - name: Simone Rescio
       link: https://github.com/srescio
 
+ko:
+  version: 1.0.0
+  label: Korean
+  prefix: /ko/
+  available: true
+  translators:
+    - name: Donghee Kim
+      link: https://github.com/kimdhoe
+
 pl:
   version: 1.0.0
   label: Polish
@@ -100,18 +111,18 @@ ru:
   version: 1.0.0
   label: Russian
   prefix: /ru/
-  available: false
+  available: true
   translators:
     - name: Даниил Пронин
       link: https://github.com/grawl
     - name: Pavel Demyanenko
       link: https://github.com/PavelDemyanenko
 
-sp:
-  version: 1.0.0
+es:
+  version: 1.1.0
   label: Spanish
-  prefix: /sp/
-  available: false
+  prefix: /es/
+  available: true
   translators:
     - name: Sonia Conde
       link: https://github.com/soniar4i

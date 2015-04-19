@@ -23,10 +23,10 @@ Ja osobiście korzystam z podejścia, które zdaje się być zbliżone do tego u
 
 * [Architecture for a Sass project](http://www.sitepoint.com/architecture-sass-project/)
 * [A Look at Different Sass Architectures](http://www.sitepoint.com/look-different-sass-architectures/)
-* [FR] [Sass, une architecture composée](http://slides.com/hugogiraudel/sass-une-architecture-composee)
 * [SMACSS](https://smacss.com/)
 * [An Introduction to OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
 * [Atomic Web Design](http://bradfrost.com/blog/post/atomic-web-design/)
+* [Sass, une architecture composée](http://slides.com/hugogiraudel/sass-une-architecture-composee)
 
 
 
@@ -70,7 +70,12 @@ I oczywiście:
 * `main.scss`
 
 <figure role="group">
-  <img src="/assets/images/sass-wallpaper.jpg" alt="One file to rule them all, One file to find Them, One file to bring them all, And in the Sass way merge them." />
+  <img alt="One file to rule them all, One file to find Them, One file to bring them all, And in the Sass way merge them."
+     sizes="100vw"
+     srcset="/assets/images/sass-wallpaper_small.jpg  540w,
+             /assets/images/sass-wallpaper_medium.jpg 900w,
+             /assets/images/sass-wallpaper_large.jpg 1200w,
+             /assets/images/sass-wallpaper_huge.jpg  1590w" />
   <figcaption>Tapeta stworzona przez <a href="https://twitter.com/julien_he">Julien He</a></figcaption>
 </figure>
 
@@ -424,7 +429,7 @@ Istnieje także inne podejście do importowania plików cząstkowych (partiali),
 
 ## Plik wstydu
 
-Pojawił się ostatnio interesujący pomysł, którego twórcami uznać można [Harry'ego Robertsa](http://csswizardry.com), [Dave'a Ruperta](http://daverupert.com) and [Chrisa Coyiera](http://css-tricks.com). Zakłada on mianowicie umieszczenie wszelkich deklaracji CSSa, haków i rzeczy, z których nie jesteśmy do końca dumni, w tzw. *pliku wstydu*. Ten plik, przewrotnie nazwany `_shame.css`, importowany jest po wszelkich innych plikach, na samym końcu arkusza stylów.
+Pojawił się ostatnio interesujący pomysł, którego twórcami uznać można [Harry’ego Robertsa](http://csswizardry.com), [Dave'a Ruperta](http://daverupert.com) and [Chrisa Coyiera](http://css-tricks.com). Zakłada on mianowicie umieszczenie wszelkich deklaracji CSSa, haków i rzeczy, z których nie jesteśmy do końca dumni, w tzw. *pliku wstydu*. Ten plik, przewrotnie nazwany `_shame.css`, importowany jest po wszelkich innych plikach, na samym końcu arkusza stylów.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
