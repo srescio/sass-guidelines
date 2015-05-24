@@ -1,17 +1,17 @@
 
-# Naming conventions
+# Convenzioni sui nomi
 
-In this section, we will not deal with the best CSS naming conventions for maintainability and scale; not only is that up to you, it’s also out of the scope of a Sass styleguide. I suggest those recommended by [CSS Guidelines](http://cssguidelin.es/#naming-conventions).
+In questa sezione, we will not deal with the best CSS naming conventions for maintainability and scale; not only is that up to you, it’s also out of the scope of a Sass styleguide. I suggest those recommended by [CSS Guidelines](http://cssguidelin.es/#naming-conventions).
 
-There are a few things you can name in Sass, and it is important to name them well so the whole code base looks both consistent and easy to read:
+Ci sono alcuni elementi a cui è possibile attribuire un nome in Sass, ed è importante scegliere bene in modo che l'intera code base sia consistente e facile da leggere:
 
-* variables;
-* functions;
-* mixins.
+* variabili;
+* funzioni;
+* mixin.
 
-Sass placeholders are deliberately omitted from this list since they can be considered as regular CSS selectors, thus following the same naming pattern as classes.
+I segnaposti di Sass sono deliberatamente omessi in questa lista dato che possono essere considerati dei regolari selettori CSS, quindi seguendo la steassa tipologia di nomi delle classi.
 
-Regarding variables, functions and mixins, we stick to something very *CSS-y*: **lowercase hyphen-delimited**, and above all meaningful.
+Riguardo alle variabili, funzioni e mixin, ci atteniamo a qualcosa di simile al CSS: **minuscolo separato da trattini**, e soprattutto significativo.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -42,7 +42,7 @@ $vertical-rhythm-baseline: 1.5rem
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [CSS Guidelines’ Naming Conventions](http://cssguidelin.es/#naming-conventions)
 
@@ -51,28 +51,28 @@ $vertical-rhythm-baseline: 1.5rem
 
 
 
-## Constants
+## Costanti
 
-If you happen to be a framework developer or library writer, you might find yourself dealing with variables that are not meant to be updated in any circumstances: constants. Unfortunately (or fortunately?), Sass does not provide any way to define such entities, so we have to stick to strict naming conventions to make our point.
+Se sei lo sviluppatore di un framework o di una libreria, potresti imbatterti in variabili che non devono essere modificate in nessuna circostanza: le costanti. Sfortunatamente (o fotunatamente?), Sass non dispone di alcun modo per definire tali entità, quindi dobbiamo aderire a delle precise convenzioni di nomenclatura per chiarificare il ruolo di ogni variabile.
 
-As for many languages, I suggest all-caps snakerized variables when they are constants. Not only is this a very old convention, but it also contrasts well with usual lowercased hyphenated variables.
+Come per molti altri linguaggi, suggerisco il maiuscoletto con underscore di separazione per le variabili quando hanno il ruolo di costanti. Non solo si tratta di una convenzione molto comune, contrasta inoltre molto bene rispetto alle comuni variabili scritte in minuscolo separate da trattini.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
 {% highlight scss %}
-// Yep
+// Giusto
 $CSS_POSITIONS: (top, right, bottom, left, center);
 
-// Nope
+// Sbagliato
 $css-positions: (top, right, bottom, left, center);
 {% endhighlight %}
   </div>
   <div class="code-block__wrapper" data-syntax="sass">
 {% highlight sass %}
-// Yep
+// Giusto
 $CSS_POSITIONS: (top, right, bottom, left, center)
 
-// Nope
+// Sbagliato
 $css-positions: (top, right, bottom, left, center)
 {% endhighlight %}
   </div>
@@ -80,7 +80,7 @@ $css-positions: (top, right, bottom, left, center)
 
 
 
-### Further Reading
+### Letture Aggiuntive
 
 * [Dealing With Constants in Sass](http://www.sitepoint.com/dealing-constants-sass/)
 
@@ -91,9 +91,9 @@ $css-positions: (top, right, bottom, left, center)
 
 ## Namespace
 
-If you intend to distribute your Sass code, in the case of a library, a framework, a grid system or whatever, you might want to consider namespacing all your variables, functions, mixins and placeholders so it does not conflict with anyone else’s code.
+Se vuoi distribuire il tuo codice Sass, come nel caso di una libreria o un framework, un layout a griglia o altro, può essere opportuno attribuire un namespace a tutte le variabili, funzioni, mixin e segnaposto così da non andare in conflitto con codice altrui.
 
-For instance, if you work on a *Sassy Unicorn* project that is meant to be used by developers all over the world (who wouldn’t, right?), you could consider using `su-` as a namespace. It is specific enough to prevent any naming collisions and short enough not to be a pain to write.
+Per esempio, se stai lavorando ad un progetto *Sassy Unicorn* che debba essere usato dagli sviluppatori di tutto il mondo (chi non lo vorrebbe?), potresti usare `su-` come namespace. È abbastanza specifico da evitare collisioni sui nomi e corto abbastanza da non essere fastidioso da scrivere.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -116,9 +116,9 @@ $su-configuration: ( ... )
 </div>
 
 <div class="note">
-  <p>Note that automatic namespacing is definitely a design goal for the upcoming <code>@import</code> revamp from Sass 4.0. As that comes closer to fruition, it will become less and less useful to do manual namespacing; eventually, manually-namespaced libraries may actually be harder to use.</p>
+  <p>Da notare che il namespacing automatico è uno degli obbiettivi di design della futura rivisitazione di <code>@import</code> in Sass 4.0. Dato che si avvicina la sua disponibilità, verrà meno la necessità di aggiungere i namespace manualmente; in futuro, le librerie con namespace manuali potrebbero diventare più difficili da usare.</p>
 </div>
 
-### Further reading
+### Letture Aggiuntive
 
 * [Please Respect the Global CSS Namespace](http://blog.kaelig.fr/post/44554267597/please-respect-the-global-css-namespace)
