@@ -1,27 +1,27 @@
 
-# Commenting
+# Commenti
 
-CSS is a tricky language, full of hacks and oddities. Because of this, it should be heavily commented, especially if you or someone else intend to read and update the code 6 months or 1 year from now. Don’t let you or anybody else be in the position of *I-didn’t-write-this-oh-my-god-why*.
+Il CSS è un linguaggio complicato, pieno di hacks e stranezze. Per questo motivo dovrebbe essere pesantemente commentato, specialmente se tu o qualcun altro ha intenzione di leggere e aggiornare il codice a distanza di 6 mesi o un anno. Non permettere che tu o qualcun altro si ritrovi nella posizione di *Non-l'ho-scritto-io-oh-mio-dio-perché*.
 
-As simple as CSS can get, there is still a lot of room for comments. These could be explaining:
+Per quanto il CSS possa apparire semplice, c'è sempre spazio per dei commenti. Potrebbero spiegare:
 
-* the structure and/or role of a file;
-* the goal of a ruleset;
-* the idea behind a magic number;
-* the reason for a CSS declaration;
-* the order of CSS declarations;
-* the thought process behind a way of doing things.
+* la struttura e/o il ruolo di un file;
+* l'ovviettivo di un set di regole;
+* l'idea che si cela dietro un numero magico;
+* il motivo di una dichiarazione CSS;
+* l'ordine delle dichiarazioni CSS;
+* il ragionamento che ha portato a determinate scelte.
 
-And I probably forgot a lot of other various reasons as well. Commenting takes very little time when done seamlessly along with the code so do it at the right time. Coming back at a piece of code to comment it is not only completely unrealistic but also extremely annoying.
-
-
+E probabilmente ho dimenticato molte altre ragioni. Commentare il codice richiede relativamente poco tempo quando è fatto immediatamente a valle della stesura del codice stesso, quindi fallo al momento giusto. Tornare su un pezzo di codice per commentarlo non solo è completamente irrealistico ma anche estremamente fastidioso.
 
 
 
 
-## Writing comments
 
-Ideally, *any* CSS ruleset should be preceded by a C-style comment explaining the point of the CSS block. This comment also hosts numbered explanations regarding specific parts of the ruleset. For instance:
+
+## Scrivere i commenti
+
+Idealmente, *ogni* gruppo di regole CSS dovrebbe essere preceduto da un commento in C-style spiegando il ruolo del blocco CSS. Tale commento dovrebbe ospitare delle spiegazioni numerate riguardo specifiche parti del gruppo di regole. Per esempio:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -55,9 +55,9 @@ Ideally, *any* CSS ruleset should be preceded by a C-style comment explaining th
   </div>
 </div>
 
-Basically everything that is not obvious at first glance should be commented. There is no such thing as too much documentation. Remember that you cannot *comment too much*, so get on fire and write comments for everything that is worth it.
+Basilarmente tutto ciò che non sia chiaro a colpo d'occhio dovrebbe essere commentato. La documentazione non è mai troppa. Ricordati che non puoi *commentare troppo*, quindi sbizzarrisciti e scrivi commenti per tutto ciò che lo richiede.
 
-When commenting a Sass-specific section, use Sass inline comments instead of a C-style block. This makes the comment invisible in the output, even in expanded mode during development.
+Nel commentare sezioni specifiche di Sass, usa i commenti inline di Sass invece dei blocchi in C-style. Questo rende i commenti invisibili nell'output, anche nella modalità espansa in fase di sviluppo.
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -78,7 +78,7 @@ $imported-modules: append($imported-modules, $module) !global
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [CSS Guidelines’ Commenting section](http://cssguidelin.es/#commenting)
 
@@ -87,9 +87,9 @@ $imported-modules: append($imported-modules, $module) !global
 
 
 
-## Documentation
+## Documentazione
 
-Every variable, function, mixin and placeholder that is intended to be reused all over the codebase should be documented as part of the global API using [SassDoc](http://sassdoc.com).
+Ogni variabile, funzione, mixin e segnaposto che sia inteso per essere riusato in tutta la codebase dovrebbe essere documentato come parte delle API globali usando [SassDoc](http://sassdoc.com).
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -112,22 +112,22 @@ $vertical-rhythm-baseline: 1.5rem
   <p>Three slashes (<code>/</code>) required.</p>
 </div>
 
-SassDoc has two major roles:
+SassDoc ha due ruoli principali:
 
-* forcing standardized comments using an annotation-based system for everything that is part of a public or private API;
-* being able to generate an HTML version of the API documentation by using any of the SassDoc endpoints (CLI tool, Grunt, Gulp, Broccoli, Node...).
+* forzare commenti standardizzati usando un sistema basato su annotazioni per tutto ciò che è parte di una API privata o pubblica;
+* genera una versione HTML della documentazione delle API usando uno qualunque degli endpoint di SassDoc (CLI tool, Grunt, Gulp, Broccoli, Node...).
 
 <figure role="group">
-<img alt="Documentation generated by SassDoc"
+<img alt="Documentazione generata da SassDoc"
      sizes="100vw"
      srcset="/assets/images/sassdoc-preview_small.png  540w,
              /assets/images/sassdoc-preview_medium.png 900w,
              /assets/images/sassdoc-preview_large.png 1200w,
              /assets/images/sassdoc-preview_huge.png  1590w" />
-<figcaption>Documentation generated by SassDoc</figcaption>
+<figcaption>Documentazione generata da SassDoc</figcaption>
 </figure>
 
-Here is an example of a mixin extensively documented with SassDoc:
+Ecco un esempio di mixin documentato estensivamente con SassDoc:
 
 <div class="code-block">
   <div class="code-block__wrapper" data-syntax="scss">
@@ -203,7 +203,7 @@ Here is an example of a mixin extensively documented with SassDoc:
 
 
 
-### Further reading
+### Letture Aggiuntive
 
 * [SassDoc](http://sassdoc.com)
 * [SassDoc: a Documentation Tool for Sass](http://www.sitepoint.com/sassdoc-documentation-tool-sass/)
